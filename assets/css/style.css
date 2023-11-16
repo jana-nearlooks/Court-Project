@@ -1,0 +1,306 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #424242;
+}
+
+.img-fluid {
+    max-width: 100% !important;
+    height: auto;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+/** Login 24 start **/
+.login-24-inner {
+    padding: 0;
+    z-index: 999;
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-24 a {
+    text-decoration: none;
+}
+
+.login-24-inner:before {
+    content: "";
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    background-image: linear-gradient(to bottom, #5876e5, #170e5d);
+}
+
+.login-24 .form-check-input:checked {
+    display: none;
+}
+
+.login-24 .container{
+    max-width: 1120px;
+}
+
+.login-24 .form-section .form-box {
+    float: left;
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+.login-24 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Jost', sans-serif;
+}
+
+.login-24 .bg-img {
+    background: url(../img/justice.png);
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    z-index: 999;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 50px;
+ 
+}
+
+.login-24 .login-box {
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+}
+
+.login-24 .form-section {
+    padding: 60px;
+    border-radius: 10px 0 0 10px;
+    text-align: left;
+}
+
+.login-24 .pad-0 {
+    padding: 0;
+}
+
+.login-24 label {
+    color: #424242;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.login-24 .form-section p {
+    color: #424242;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.login-24 .form-section p a{
+    color: #424242;
+}
+
+.login-24 .form-section p a {
+    color: #424242;
+}
+
+.login-24 .form-info{
+    padding: 0;
+}
+
+.login-24 .form-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.login-24 .form-section .social-list li {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.login-24 .form-section .thembo {
+    margin-left: 4px;
+}
+
+.login-24 .form-section h1 {
+    font-size: 27px;
+    font-weight: 600;
+    color: #5876e5;
+}
+
+.login-24 .form-section h3 {
+    margin: 0 0 40px;
+    font-size: 23px;
+    font-weight: 400;
+    color: #121212;
+}
+
+.login-24 .form-section .form-group {
+    margin-bottom: 25px;
+}
+
+.login-24.form-section .form-box {
+    float: left;
+    width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+.login-24 .form-section .form-control {
+    padding: 10px 20px;
+    font-size: 16px;
+    outline: none;
+    height: 55px;
+    color: #424242;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    background: #efefef;
+}
+
+.login-24 .form-section .checkbox .terms {
+    margin-left: 3px;
+}
+
+.login-24 .form-section .btn-md {
+    cursor: pointer;
+    padding: 15.5px 50px 14.5px 50px;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    border-radius: 3px;
+}
+
+.login-24 .form-section input[type=checkbox], input[type=radio] {
+    margin-right: 3px;
+}
+
+.login-24 .form-section button:focus {
+    outline: none;
+    outline: 0 auto -webkit-focus-ring-color;
+}
+
+.login-24 .form-section .btn-theme.focus, .btn-theme:focus {
+    box-shadow: none;
+}
+
+.login-24 .form-section .btn-theme {
+    background: #5876e5;
+    border: none;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-24 .form-section .btn-theme:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: #4a69dc;
+}
+
+.login-24 .form-section .terms {
+    margin-left: 3px;
+}
+
+.login-24 .form-section .form-check {
+    float: left;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.login-24 .form-section .form-check a {
+    color: #424242;
+    float: right;
+}
+
+.login-24 .form-section .form-check-input {
+    position: absolute;
+    margin-left: 0;
+}
+
+.login-24 .form-section .form-check label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 2px;
+    margin-left: -25px;
+    border: 1px solid  #efefef;
+    border-radius: 3px;
+    background-color: #efefef;
+}
+
+.login-24 .form-section .form-check-label {
+    padding-left: 25px;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #424242;
+}
+
+.login-24 .form-section .checkbox-theme input[type="checkbox"]:checked + label::before {
+    background-color: #5876e5;
+    border-color: #5876e5;
+}
+
+.login-24 .form-section input[type=checkbox]:checked + label:before {
+    font-weight: 600;
+    color: #fff;
+    line-height: 15px;
+    font-size: 14px;
+    content: "\2713";
+    padding-left: 3px;
+}
+
+.login-24 .form-section input[type=checkbox], input[type=radio] {
+    margin-top: 4px;
+}
+
+.login-24 .form-section a.forgot-password {
+    font-size: 16px;
+    color: #424242;
+    float: right;
+}
+
+.login-24 .social-list a {
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 20px;
+    color: #424242;
+}
+
+.login-24 .social-list a:hover {
+    color: #5876e5;
+}
+
+@media (max-width: 992px) {
+    .login-24 .form-section {
+        padding: 60px 60px 60px;
+    }
+
+    .login-24-inner:before {
+        background: none;
+    }
+
+    .login-24 .login-box {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .login-24 .bg-img{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-24 .form-section {
+        padding: 40px 30px;
+    }
+}
+/** Login 24 end **/
