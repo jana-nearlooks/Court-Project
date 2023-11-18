@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -9,7 +8,7 @@
         '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TAGCODE');</script>
     <!-- End Google Tag Manager -->
-    <title>Forget Password</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <!-- External CSS libraries -->
@@ -39,38 +38,3 @@
 <!-- Login 24 start -->
 <div class="login-24">
     <div class="login-24-inner">
-        <div class="container">
-            <div class="row login-box">
-                <div class="col-lg-6 bg-img"></div>
-                <div class="col-lg-6 form-info">
-                    <div class="form-section align-self-center">
-                        <h1>Welcome!</h1>
-                        <h3>Recover Your Password</h3>
-                        <div class="clearfix"></div>
-                        <form action="#" method="GET">
-                            <div class="form-group form-box">
-                                <label for="first_field" class="form-label">Email address</label>
-                                <input name="email" type="email" class="form-control" id="first_field" placeholder="Email Address" aria-label="Email Address" required>
-                            </div>
-                            <div class="form-group clearfix">
-                                <button type="submit" class="btn-md btn-theme w-100">Send Me Email</button>
-                            </div>
-                        </form>
-                        <p>Already a member? <a href="login.html">Login here</a></p>
-                     
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Login 24 end -->
-
-<!-- External JS libraries -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JS Script -->
-</body>
-
-</html>
