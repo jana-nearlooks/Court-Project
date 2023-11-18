@@ -1,4 +1,8 @@
-<?php include 'header.php'; ?>
+<?php 
+
+include 'header.php'; 
+
+?>
         <div class="container">
             <div class="row login-box">
                 <div class="col-lg-6 bg-img"></div>

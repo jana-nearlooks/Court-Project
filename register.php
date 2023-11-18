@@ -10,18 +10,18 @@ include 'header.php';
                         <h1>Welcome!</h1>
                         <h3>Sign Into Your Account</h3>
                         <div class="clearfix"></div>
-                        <form action="#" method="GET">
+                        <form id="register_form">
                             <div class="form-group form-box">
-                                <label for="first_field" class="form-label">Full Name</label>
-                                <input name="name" type="text" class="form-control" id="first_field" placeholder="Full Name" aria-label="Full Name" required>
+                                <label for="full_name" class="form-label">Full Name</label>
+                                <input name="full_name" type="text" class="form-control" id="full_name" placeholder="Full Name" aria-label="Full Name">
                             </div>
                             <div class="form-group form-box">
-                                <label for="second_field" class="form-label">Email address</label>
-                                <input name="email" type="email" class="form-control" id="second_field" placeholder="Email Address" aria-label="Email Address" required>
+                                <label for="email" class="form-label">Email address</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="Email Address" aria-label="Email Address">
                             </div>
                             <div class="form-group form-box">
-                                <label for="third_field" class="form-label">Password</label>
-                                <input name="password" type="password" class="form-control" autocomplete="off" id="third_field" placeholder="Password" aria-label="Password" required>
+                                <label for="password" class="form-label">Password</label>
+                                <input name="password" type="password" class="form-control" autocomplete="off" id="password" placeholder="Password" aria-label="Password">
                             </div>
                             <div class="checkbox form-group form-box">
                                 <div class="checkbox clearfix">
@@ -69,3 +69,29 @@ include 'header.php';
 <?php
     include 'footer.php';
 ?>
+
+<script>
+
+$(document).ready(function(){
+    $('#register_form').submit(function(e){
+        e.preventDefault();
+        var form = $(this);
+        var formData = new FormData(form[0]);
+
+        $.ajax({
+            url:"Auth/signup.php",
+            method:"POST",
+            data:formData,
+            contentType:false,
+            processData:false,
+            cache:false,
+
+            success:function(data){
+
+            }
+        });
+
+    });
+});
+
+</script>

@@ -1,4 +1,7 @@
-<?php include 'header.php'; ?>
+<?php 
+include 'header.php'; 
+
+?>
 
         <div class="container">
             <div class="row login-box">
@@ -8,14 +11,14 @@
                         <h1>Welcome!</h1>
                         <h3>Sign Into Your Account</h3>
                         <div class="clearfix"></div>
-                        <form action="#" method="GET">
+                        <form id="login_form">
                             <div class="form-group form-box">
-                                <label for="first_field" class="form-label">Email address</label>
-                                <input name="email" type="email" class="form-control" id="first_field" placeholder="Email Address" aria-label="Email Address" required>
+                                <label for="email" class="form-label">Email address</label>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="Email Address" aria-label="Email Address">
                             </div>
                             <div class="form-group form-box">
-                                <label for="second_field" class="form-label">Password</label>
-                                <input name="password" type="password" class="form-control" autocomplete="off" id="second_field" placeholder="Password" aria-label="Password" required>
+                                <label for="password" class="form-label">Password</label>
+                                <input name="password" type="password" class="form-control" autocomplete="off" id="password" placeholder="Password" aria-label="Password">
                             </div>
                             <div class="checkbox form-group form-box">
                                 <div class="form-check checkbox-theme">
@@ -60,3 +63,27 @@
 <!-- Login 24 end -->
 
 <?php include 'footer.php'; ?>
+
+<script>
+    $(document).ready(function(){
+        $('#login_form').submit(function(e){
+            e.preventDefault();
+            var form = $(this);
+            var formData = new FormData(form[0]);
+
+            $.ajax({
+                url:"Auth/auth.php",
+                method:"POST",
+                data:formData,
+                contentType:false,
+                processData:false,
+                cache:false,
+
+                success:function(data){
+
+                }
+            });
+
+        });
+    });
+</script>
