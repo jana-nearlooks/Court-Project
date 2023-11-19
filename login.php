@@ -65,28 +65,7 @@ include 'header.php';
 <?php include 'footer.php'; ?>
 
 <script>
-    // $(document).ready(function(){
-    //     $('#login_form').submit(function(e){
-    //         e.preventDefault();
-    //         var form = $(this);
-    //         var formData = new FormData(form[0]);
-
-    //         $.ajax({
-    //             url:"Auth/auth.php",
-    //             method:"POST",
-    //             data:formData,
-    //             contentType:false,
-    //             processData:false,
-    //             cache:false,
-
-    //             success:function(data){
-
-    //             }
-    //         });
-
-    //     });
-    // });
-
+    $(document).ready(function(){   
         $('#login_form').validate({
             rules: {
                 email: {
@@ -139,4 +118,5 @@ include 'header.php';
                 });
             }
         });
+    });
 </script>
