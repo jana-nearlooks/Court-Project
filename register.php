@@ -73,100 +73,78 @@ include 'header.php';
 ?>
 
 <script>
-
-// $(document).ready(function(){
-//     $('#register_form').submit(function(e){
-//         e.preventDefault();
-//         var form = $(this);
-//         var formData = new FormData(form[0]);
-
-//         $.ajax({
-//             url:"Auth/signup.php",
-//             method:"POST",
-//             data:formData,
-//             contentType:false,
-//             processData:false,
-//             cache:false,
-
-//             success:function(data){
-//                 var response = JSON.parse(data);
-//             }
-//         });
-
-//     });
-// });
-
-
-$('#register_form').validate({
-    rules: {
-        full_name: {
-            required: true,
-            // maxlength: 1,
-        },
-        email: {
-            required: true,
-            email:true,
-        },
-        password:{
-            required:true
-        },
-        terms: {
-            required: function() {
-                return $('input[name="terms"]:checked').length === 0;
+$(document).ready(function(){
+    $('#register_form').validate({
+        rules: {
+            full_name: {
+                required: true,
+                // maxlength: 1,
             },
-        },   
-    },
-    messages: {
-        full_name: {
-            required: "Full name is required",
+            email: {
+                required: true,
+                email:true,
+            },
+            password:{
+                required:true
+            },
+            terms: {
+                required: function() {
+                    return $('input[name="terms"]:checked').length === 0;
+                },
+            },   
         },
-        email:{
-            required: "Email is required",
+        messages: {
+            full_name: {
+                required: "Full name is required",
+            },
+            email:{
+                required: "Email is required",
+            },
+            password:{
+                required: "Password is required",
+            },
+            terms: {
+                required: "Agree terms and conditions",
+            },
         },
-        password:{
-            required: "Password is required",
-        },
-        terms: {
-            required: "Agree terms and conditions",
-        },
-    },
-    errorClass: "text-danger",
-    // errorPlacement: function (error, element) {
-    //     if (element.attr("name") == "terms") {
-    //         error.insertAfter($('#terms_error'));
-    //     } else {
-    //         // something else if it's not a checkbox
-    //         error.insertAfter(element);
-    //     }
-    // },
-    
-    submitHandler: function (form) {
-        event.preventDefault();
-        var formData = new FormData($(form)[0]);
-       
-        $.ajax({
-            url: "Auth/signup.php",
-            method:"POST",
-            data:formData,
-            cache:false,
-            contentType:false,
-            processData:false,
+        errorClass: "text-danger",
+        // errorPlacement: function (error, element) {
+        //     if (element.attr("name") == "terms") {
+        //         error.insertAfter($('#terms_error'));
+        //     } else {
+        //         // something else if it's not a checkbox
+        //         error.insertAfter(element);
+        //     }
+        // },
+        
+        submitHandler: function (form) {
+            event.preventDefault();
+            var formData = new FormData($(form)[0]);
+        
+            $.ajax({
+                url: "Auth/signup.php",
+                method:"POST",
+                data:formData,
+                cache:false,
+                contentType:false,
+                processData:false,
 
-            success:function(data){
-                console.log(data);
-                var response = JSON.parse(data);
-                if(response.status == "success"){
-                    toastr[response.status](response.message);
-                    setTimeout(function(){
-                        form.reset();
-                        window.location.href="login.php";
-                    },3000);             
-                }else{
-                    toastr[response.status](response.message);
+                success:function(data){
+                    console.log(data);
+                    var response = JSON.parse(data);
+                    if(response.status == "success"){
+                        toastr[response.status](response.message);
+                        setTimeout(function(){
+                            form.reset();
+                            window.location.href="login.php";
+                        },3000);             
+                    }else{
+                        toastr[response.status](response.message);
+                    }
                 }
-            }
-        });
-    }
+            });
+        }
+    });
 });
 
 </script>
