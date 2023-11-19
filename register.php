@@ -104,7 +104,8 @@ $('#register_form').validate({
             // maxlength: 1,
         },
         email: {
-            required: true
+            required: true,
+            email:true,
         },
         password:{
             required:true
