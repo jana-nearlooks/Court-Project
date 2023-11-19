@@ -33,8 +33,8 @@ include 'header.php';
                                 <button type="submit" class="btn-md btn-theme w-100">Login</button>
                             </div>
                         </form>
-                        <!-- <p>Don't have an account? <a href="register.php">Register here</a></p>
-                        <div class="social-list">
+                        <p>Don't have an account? <a href="register.php">Register here</a></p>
+                        <!-- <div class="social-list">
                             <a href="#">
                                 <i class="fa fa-facebook"></i>
                             </a>
@@ -65,25 +65,86 @@ include 'header.php';
 <?php include 'footer.php'; ?>
 
 <script>
-    $(document).ready(function(){
-        $('#login_form').submit(function(e){
-            e.preventDefault();
-            var form = $(this);
-            var formData = new FormData(form[0]);
+    // $(document).ready(function(){
+    //     $('#login_form').submit(function(e){
+    //         e.preventDefault();
+    //         var form = $(this);
+    //         var formData = new FormData(form[0]);
 
-            $.ajax({
-                url:"Auth/auth.php",
-                method:"POST",
-                data:formData,
-                contentType:false,
-                processData:false,
-                cache:false,
+    //         $.ajax({
+    //             url:"Auth/auth.php",
+    //             method:"POST",
+    //             data:formData,
+    //             contentType:false,
+    //             processData:false,
+    //             cache:false,
 
-                success:function(data){
+    //             success:function(data){
 
-                }
-            });
+    //             }
+    //         });
 
+    //     });
+    // });
+
+        $('#login_form').validate({
+            rules: {
+                email: {
+                    required: true
+                },
+                password:{
+                    required:true
+                },  
+            },
+            messages: {
+                email:{
+                    required: "Email is required",
+                },
+                password:{
+                    required: "Password is required",
+                },
+            },
+            errorClass: "text-danger",
+            // errorPlacement: function (error, element) {
+            //     if (element.attr("name") == "terms") {
+            //         error.insertAfter($('#terms_error'));
+            //     } else {
+            //         // something else if it's not a checkbox
+            //         error.insertAfter(element);
+            //     }
+            // },
+            
+            submitHandler: function (form) {
+                alert('submit');
+                // event.preventDefault();
+                var formData = new FormData($(form)[0]);
+            
+                $.ajax({
+                    url: "Auth/auth.php",
+                    method:"POST",
+                    data:formData,
+                    cache:false,
+                    contentType:false,
+                    processData:false,
+
+                    success:function(data){
+                        console.log(data);
+                        var response = JSON.parse(data);
+                        if(response.status == "success"){
+                            toastr[response.status](response.message);
+                            setTimeout(function(){
+                                form.reset();
+                                if(response.isAdmin == 0){
+                                    window.location.href="User/user_dashboard.php";
+                                }else{
+                                    window.location.href="Admin/admin_dashboard.php";
+                                }
+                            },3000);             
+                        }else{
+                            toastr[response.status](response.message);
+                        }
+                    }
+                });
+            }
         });
-    });
 </script>

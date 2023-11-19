@@ -159,7 +159,7 @@ body {
     font-size: 16px;
     outline: none;
     height: 55px;
-    color: #424242;
+    color: #424242 !important;
     border-radius: 3px;
     border: 1px solid transparent;
     background: #efefef;
@@ -303,4 +303,8 @@ body {
         padding: 40px 30px;
     }
 }
+
+/* .error{
+    color: red !important;
+} */
 /** Login 24 end **/

@@ -24,21 +24,23 @@ include 'header.php';
                                 <input name="password" type="password" class="form-control" autocomplete="off" id="password" placeholder="Password" aria-label="Password">
                             </div>
                             <div class="checkbox form-group form-box">
-                                <div class="checkbox clearfix">
+                                <div class="">
                                     <div class="form-check checkbox-theme">
-                                        <input class="form-check-input" type="checkbox" value="" id="rememberMe" required>
-                                        <label class="form-check-label" for="rememberMe">
-                                            I agree to the<a href="#" class="terms">terms of service</a>
+                                        <input class="form-check-input" type="checkbox" value="" id="terms" name="terms">
+                                        <label class=" form-check-label" for="rememberMe">
+                                            I agree to the<a href="javascript:void(0);" class="terms">terms of service</a>
                                         </label>
                                     </div>
                                 </div>
                             </div>
+                            <div id="terms_error" class=" terms_error text-danger errors"></div>
+                            
                             <div class="form-group clearfix">
                                 <button type="submit" class="btn-md btn-theme w-100">Register</button>
                             </div>
                         </form>
-                        <!-- <p>Already a member? <a href="login.php">Login here</a></p>
-                        <div class="social-list">
+                        <p>Already a member? <a href="login.php">Login here</a></p>
+                        <!-- <div class="social-list">
                             <a href="#">
                                 <i class="fa fa-facebook"></i>
                             </a>
@@ -72,26 +74,98 @@ include 'header.php';
 
 <script>
 
-$(document).ready(function(){
-    $('#register_form').submit(function(e){
-        e.preventDefault();
-        var form = $(this);
-        var formData = new FormData(form[0]);
+// $(document).ready(function(){
+//     $('#register_form').submit(function(e){
+//         e.preventDefault();
+//         var form = $(this);
+//         var formData = new FormData(form[0]);
 
+//         $.ajax({
+//             url:"Auth/signup.php",
+//             method:"POST",
+//             data:formData,
+//             contentType:false,
+//             processData:false,
+//             cache:false,
+
+//             success:function(data){
+//                 var response = JSON.parse(data);
+//             }
+//         });
+
+//     });
+// });
+
+
+$('#register_form').validate({
+    rules: {
+        full_name: {
+            required: true,
+            // maxlength: 1,
+        },
+        email: {
+            required: true
+        },
+        password:{
+            required:true
+        },
+        terms: {
+            required: function() {
+                return $('input[name="terms"]:checked').length === 0;
+            },
+        },   
+    },
+    messages: {
+        full_name: {
+            required: "Full name is required",
+        },
+        email:{
+            required: "Email is required",
+        },
+        password:{
+            required: "Password is required",
+        },
+        terms: {
+            required: "Agree terms and conditions",
+        },
+    },
+    errorClass: "text-danger",
+    // errorPlacement: function (error, element) {
+    //     if (element.attr("name") == "terms") {
+    //         error.insertAfter($('#terms_error'));
+    //     } else {
+    //         // something else if it's not a checkbox
+    //         error.insertAfter(element);
+    //     }
+    // },
+    
+    submitHandler: function (form) {
+        event.preventDefault();
+        var formData = new FormData($(form)[0]);
+       
         $.ajax({
-            url:"Auth/signup.php",
+            url: "Auth/signup.php",
             method:"POST",
             data:formData,
+            cache:false,
             contentType:false,
             processData:false,
-            cache:false,
 
             success:function(data){
-
+                console.log(data);
+                var response = JSON.parse(data);
+                if(response.status == "success"){
+                    toastr[response.status](response.message);
+                    setTimeout(function(){
+                        form.reset();
+                        window.location.href="login.php";
+                    },3000);             
+                }else{
+                    toastr[response.status](response.message);
+                }
             }
         });
-
-    });
+    }
 });
 
 </script>
