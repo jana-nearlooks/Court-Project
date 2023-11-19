@@ -13,7 +13,7 @@ $user = mysqli_fetch_assoc($verify);
 
 if($user){
     $userId = $user['id'];
-    if(($password == $user['password'])) {
+    if(password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['role'] = $user['isAdmin'];
@@ -21,10 +21,9 @@ if($user){
 
         $response['status'] = "success";
         $response['isAdmin'] = $user['isAdmin'];
-        $response['message'] = "Welcome back ".$user['firstName']." - You have logged in successfully.";
+        $response['message'] = "Welcome back ".$user['full_name']." - You have logged in successfully.";
 
     }else{
-        $reason= "Wrong Password";
         $response['status'] = "error";
         $response['message'] = "Invalid Credentials.";
     } 

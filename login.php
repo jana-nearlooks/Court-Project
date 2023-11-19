@@ -22,7 +22,7 @@ include 'header.php';
                             </div>
                             <div class="checkbox form-group form-box">
                                 <div class="form-check checkbox-theme">
-                                    <input class="form-check-input" type="checkbox" value="" id="rememberMe" required>
+                                    <input class="form-check-input" type="checkbox" value="" id="rememberMe">
                                     <label class="form-check-label" for="rememberMe">
                                         Remember me
                                     </label>
@@ -90,11 +90,12 @@ include 'header.php';
         $('#login_form').validate({
             rules: {
                 email: {
-                    required: true
+                    required: true,
+                    email:true
                 },
                 password:{
                     required:true
-                },  
+                }  
             },
             messages: {
                 email:{
@@ -102,21 +103,12 @@ include 'header.php';
                 },
                 password:{
                     required: "Password is required",
-                },
+                }
             },
             errorClass: "text-danger",
-            // errorPlacement: function (error, element) {
-            //     if (element.attr("name") == "terms") {
-            //         error.insertAfter($('#terms_error'));
-            //     } else {
-            //         // something else if it's not a checkbox
-            //         error.insertAfter(element);
-            //     }
-            // },
             
             submitHandler: function (form) {
-                alert('submit');
-                // event.preventDefault();
+                event.preventDefault();
                 var formData = new FormData($(form)[0]);
             
                 $.ajax({
