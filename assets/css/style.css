@@ -159,7 +159,7 @@ body {
     font-size: 16px;
     outline: none;
     height: 55px;
-    color: #424242;
+    color: #424242 !important;
     border-radius: 3px;
     border: 1px solid transparent;
     background: #efefef;
@@ -221,9 +221,10 @@ body {
 .login-24 .form-section .form-check-input {
     position: absolute;
     margin-left: 0;
+    margin-top: 0.25cm;
 }
 
-.login-24 .form-section .form-check label::before {
+/* .login-24 .form-section .form-check label::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -234,7 +235,7 @@ body {
     border: 1px solid  #efefef;
     border-radius: 3px;
     background-color: #efefef;
-}
+} */
 
 .login-24 .form-section .form-check-label {
     padding-left: 25px;
@@ -303,4 +304,8 @@ body {
         padding: 40px 30px;
     }
 }
+
+/* .error{
+    color: red !important;
+} */
 /** Login 24 end **/
