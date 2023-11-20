@@ -108,6 +108,7 @@ $(document).ready(function(){
             },
         },
         errorClass: "text-danger",
+<<<<<<< HEAD
         errorPlacement: function (error, element) {
             if (element.attr("name") == "terms") {
                 error.insertAfter($('#terms_error'));
@@ -116,6 +117,16 @@ $(document).ready(function(){
                 error.insertAfter(element);
             }
         },
+=======
+        // errorPlacement: function (error, element) {
+        //     if (element.attr("name") == "terms") {
+        //         error.insertAfter($('#terms_error'));
+        //     } else {
+        //         // something else if it's not a checkbox
+        //         error.insertAfter(element);
+        //     }
+        // },
+>>>>>>> 81257af845a4c37bea65b783a939e3a7c84f95ef
         
         submitHandler: function (form) {
             event.preventDefault();

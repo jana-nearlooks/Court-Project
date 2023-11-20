@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE  html>
 <html lang="en">
@@ -70,3 +71,6 @@
 	    <script src="../assets/js/app.js"></script>
     </body>
 </html>
+=======
+<h2>Welcome User</h2>
+>>>>>>> 81257af845a4c37bea65b783a939e3a7c84f95ef
