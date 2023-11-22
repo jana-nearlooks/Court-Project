@@ -16,7 +16,7 @@ if($token){
 
     if($updateSqlExec){
         $new_token = md5(rand());
-        $update_token_query = "UPDATE users set remember_token = '$new_token' where remember_token= 'secret_key' ";
+        $update_token_query = "UPDATE users set remember_token = '$new_token' where remember_token= '$secret_key' ";
         $update_token = mysqli_query($conn, $update_token_query);
 
         if($update_token){
