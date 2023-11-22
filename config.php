@@ -5,6 +5,7 @@ ini_set('display_errors', '1');
 
 $env = "local";
 $pg_page_name = " ";
+$conn;
 
 if($env == 'live'){
   
@@ -25,6 +26,7 @@ if($env == 'live'){
     $username = "root";
     $password = "";
     $db = "court";
+    $base_url = "http://localhost/Court-Project";
 
     $conn = mysqli_connect($servername, $username, $password, $db);
 
@@ -32,13 +34,6 @@ if($env == 'live'){
         echo 'Something Went Wrong'.mysqli_connect_error();
     }
 
-}
-
-date_default_timezone_set('Asia/Kolkata');
-
-function formatDate($datetimeStamp){
-    $dateTime = new DateTime($datetimeStamp);
-    return $dateTime->format('d-M-Y h:m');
 }
 
 ?>

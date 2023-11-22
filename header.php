@@ -16,6 +16,10 @@
     <link type="text/css" rel="stylesheet" href="assets/css/toastr.min.css">
     <link type="text/css" rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="assets/fonts/flaticon/font/flaticon.css">
+    <link href="assets/css/tobii.min.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+       
     
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" >
@@ -27,6 +31,7 @@
     <!-- Custom Stylesheet -->
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" id="style_sheet" href="assets/css/skins/default.css">
+    <link href="../assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
 </head>
 <body id="top">
 <!-- Google Tag Manager (noscript) -->
