@@ -52,7 +52,7 @@ $(document).ready(function(){
             var formData = new FormData($(form)[0]);
         
             $.ajax({
-                url: "Auth/reset_password.php",
+                url: "Auth/sendReset_link.php",
                 method:"POST",
                 data:formData,
                 cache:false,

@@ -1,28 +1,7 @@
-<<<<<<< HEAD
+<?php
 
-<!DOCTYPE  html>
-<html lang="en">
-	
-<head>
-		<meta charset="UTF-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Tamilnadu E-Court</title>
-	
-	    <!-- favicon -->
-        <link href="../images/favicon.ico" rel="shortcut icon">
-		<!-- Bootstrap core CSS -->
-	    <link href="../assets/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-  
-	    <link href="../assets/css/tobii.min.css" type="text/css" rel="stylesheet" />
-        <link href="../assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-        <link href="../../../unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="../assets/fonts/font-awesome/css/font-awesome.min.css">
-	    <!-- Custom  Css -->
-	    <link href="../assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
-	</head>
-
-	<body>
-        <!-- START NAVBAR -->
+include '../header.php';
+?>
         <nav id="navbar" class="navbar navbar-expand-lg fixed-top sticky">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -71,6 +50,4 @@
 	    <script src="../assets/js/app.js"></script>
     </body>
 </html>
-=======
 <h2>Welcome User</h2>
->>>>>>> 81257af845a4c37bea65b783a939e3a7c84f95ef
