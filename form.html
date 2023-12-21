@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from uigaint.com/demo/html/anfra/kyc-2/kyc.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Dec 2023 06:55:24 GMT -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Court - OS</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assetss/css/bootstrap.min.css">
+
+  <!-- External Css -->
+  <link rel="stylesheet" href="assetss/css/line-awesome.min.css">
+
+  <!-- Custom Css -->
+  <link rel="stylesheet" type="text/css" href="assetss/css/main.css">
+  <link rel="stylesheet" type="text/css" href="assetss/css/kyc-2.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <!-- <link rel="icon" href="assetss/images/favicon.png"> -->
+  <link rel="apple-touch-icon" href="assetss/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assetss/images/icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assetss/images/icon-114x114.png">
+
+
+</head>
+
+<body>
+  <!-- 
+    <div class="ugf-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="navigation">
+              <div class="logo">
+                <a href="https://uigaint.com/demo/html/anfra/index.html"><img src="assetss/images/logo-dark.png" class="img-fluid" alt=""><span>KYC</span></a>
+              </div>
+              <div class="nav-btns">
+                <a href="https://uigaint.com/demo/html/anfra/index.html" class="back"><span class="text">Back to Main</span> Demo</a>
+                <a href="https://themeforest.net/item/anfra-questionnaire-form-wizard/29917051" class="get">Get Anfra</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="ugf-bg ufg-main-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 p-sm-0">
+          <div class="ugf-form">
+            <form action="#" style=" padding: 5%; box-shadow: 1px 2px 10px 0;border-radius: 10px;">
+              <div class="input-block">
+                <h4 style="text-align:center">Case Type : OS (Money Suite)</h4>
+
+
+                <div class="row">
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group">
+                      <label for="inputFname">அசல் வழக்கு எண்:</label>
+                      <input type="text" class="form-control" id="asal-valakku-yen" placeholder="e.g. 001/002">
+                    </div>
+
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+
+                    <div class="form-group">
+                      <label for="inputFname">CNR No:</label>
+                      <input type="text" class="form-control" id="CNR-no">
+                    </div>
+                  </div>
+                 
+                  <div class="mt-5 mb-5">
+                    <center><h4>வாதி</h4></center>
+                  </div>
+
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group">
+                      <label for="inputFname">வாதியின் பெயர்:</label>
+                      <input type="text" class="form-control" id="name">
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group">
+                      <label for="inputLname">வயது:</label>
+                      <input type="text" class="form-control" id="age">
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group country-select">
+                      <label for="Gender"></label>
+                      <div class="select-input choose-country">
+                        <span></span>
+                        <select id="Gender" class="form-control">
+                          <option value="">த/பெ</option>
+                          <option value="">ம/பெ</option>
+                          <option value="">க/பெ</option>
+
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group">
+                      <label for="inputLname">பெயர்:</label>
+                      <input type="text" class="form-control" id="age" placeholder="த/பெ பெயர்">
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group country-select">
+                      <label for="Gender">பாலினம்:</label>
+                      <div class="select-input choose-country">
+                        <span></span>
+                        <select id="Gender" class="form-control">
+                          <option value="">ஆண்</option>
+                          <option value="">பெண்</option>
+                          <option value="">மற்றவை</option>
+
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group country-select">
+                      <label for="Religion">மதம்:</label>
+                      <div class="select-input choose-country">
+                        <span></span>
+                        <select id="Religion" class="form-control">
+                          <option value="">இந்து</option>
+                          <option value="">முஸ்லீம்</option>
+                          <option value="">கிறித்தவம்</option>
+                          <option value="">மற்றவை</option>
+
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-5 mb-5">
+                    <h4>முகவரி </h4>
+                  </div>
+
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group">
+                      <label for="inputFname">முகவரி 1:</label>
+                      <input type="text" class="form-control" id="name">
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group">
+                      <label for="inputFname">முகவரி 2:</label>
+                      <input type="text" class="form-control" id="name">
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group country-select">
+                      <label for="Religion">தாலுகா:</label>
+                      <div class="select-input choose-country">
+                        <span></span>
+                        <select id="Religion" class="form-control">
+                          <option value="">
+                            திண்டுக்கல்</option>
+                          <option value="">வேடசந்தூர்</option>
+                          <option value="">பழனி</option>
+                          <option value="">நிலக்கோட்டை</option>
+                          <option value="">ஒட்டன்சத்திரம்</option>
+                          <option value="">
+                            ஆத்தூர்</option>
+                          <option value="">
+                            நத்தம்</option>
+                          <option value="">கொடைக்கானல்</option>
+
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 p-sm-0">
+                    <div class="form-group country-select">
+                      <label for="Religion">மாவட்டம்:</label>
+                      <div class="select-input choose-country">
+                        <span></span>
+                        <select id="Religion" class="form-control">
+                          <option value="">
+                            திண்டுக்கல்</option>
+                          <option value="">சென்னை</option>
+                          <option value="">காஞ்சிபுரம்</option>
+                          <option value="">செங்கல்பட்டு</option>
+                          <option value="">திருவள்ளூர்</option>
+                          <option value="">
+                            திருவண்ணாமலை</option>
+                          <option value="">
+                            வேலூர்</option>
+                          <option value="">விழுப்புரம்</option>
+                          <option value="">கள்ளக்குறிச்சி</option>
+                          <option value="">திருப்பத்தூர்</option>
+                          <option value="">இராணிப்பேட்டை</option>
+                          <option value="">அரியலூர்</option>
+                          <option value="">கடலூர்</option>
+                          <option value="">மயிலாடுதுறை</option>
+                          <option value="">நாகப்பட்டினம்</option>
+                          <option value="">பெரம்பலூர்</option>
+                          <option value="">புதுக்கோட்டை</option>
+                          <option value="">தஞ்சாவூர்</option>
+                          <option value="">திருச்சிராப்பள்ளி</option>
+                          <option value="">திருவாரூர்</option>
+                          <option value="">தருமபுரி</option>
+                          <option value="">திண்டுக்கல்</option>
+                          <option value="">கோயம்புத்தூர்</option>
+                          <option value="">கரூர்</option>
+                          <option value="">ஈரோடு</option>
+                          <option value="">கிருஷ்ணகிரி</option>
+                          <option value="">நாமக்கல்</option>
+                          <option value="">நீலகிரி</option>
+                          <option value="">சேலம்</option>
+                          <option value="">திருப்பூர்</option>
+                          <option value="">கன்னியாகுமரி</option>
+                          <option value="">மதுரை</option>
+                          <option value="">இராமநாதபுரம்</option>
+                          <option value="">சிவகங்கை</option>
+                          <option value="">தேனி</option>
+                          <option value="">தூத்துக்குடி</option>
+                          <option value="">திருநெல்வேலி</option>
+                          <option value="">தென்காசி</option>
+                          <option value="">விருதுநகர்</option>
+                         
+                                  
+
+
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                
+
+
+                </div>
+
+
+                
+
+
+
+                <!-- <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputDate">Date of Birth</label>
+                        <div class="birth-date">
+                          <div class="select-input birth-date-input">
+                            <span></span>
+                            <select id="inputDate" class="form-control">
+                              <option value="">Date</option>
+                              <option value="">01</option>
+                              <option value="">02</option>
+                              <option value="">03</option>
+                              <option value="">04</option>
+                              <option value="">05</option>
+                              <option value="">06</option>
+                              <option value="">07</option>
+                              <option value="">08</option>
+                              <option value="">09</option>
+                              <option value="">10</option>
+                              <option value="">11</option>
+                              <option value="">12</option>
+                              <option value="">13</option>
+                              <option value="">14</option>
+                              <option value="">15</option>
+                              <option value="">16</option>
+                              <option value="">17</option>
+                              <option value="">18</option>
+                              <option value="">19</option>
+                              <option value="">20</option>
+                              <option value="">21</option>
+                              <option value="">22</option>
+                              <option value="">23</option>
+                              <option value="">24</option>
+                              <option value="">25</option>
+                              <option value="">26</option>
+                              <option value="">27</option>
+                              <option value="">28</option>
+                              <option value="">29</option>
+                              <option value="">30</option>
+                            </select>
+                          </div>
+                          <div class="select-input birth-date-input">
+                            <span></span>
+                            <select id="inputDate" class="form-control">
+                              <option value="">Month</option>
+                              <option value="">01</option>
+                              <option value="">02</option>
+                              <option value="">03</option>
+                              <option value="">04</option>
+                              <option value="">05</option>
+                              <option value="">06</option>
+                              <option value="">07</option>
+                              <option value="">08</option>
+                              <option value="">09</option>
+                              <option value="">10</option>
+                              <option value="">11</option>
+                              <option value="">12</option>
+                            </select>
+                          </div>
+                          <div class="select-input birth-date-input">
+                            <span></span>
+                            <select id="inputDate" class="form-control">
+                            <option value="">Year</option>
+                            <option value="">1990</option>
+                            <option value="">1991</option>
+                            <option value="">1992</option>
+                            <option value="">1993</option>
+                            <option value="">1994</option>
+                            <option value="">1995</option>
+                            <option value="">1996</option>
+                            <option value="">1997</option>
+                            <option value="">1998</option>
+                            <option value="">1999</option>
+                            <option value="">2001</option>
+                            <option value="">2002</option>
+                            <option value="">2003</option>
+                            <option value="">2004</option>
+                            <option value="">2005</option>
+                            <option value="">2006</option>
+                            <option value="">2007</option>
+                            <option value="">2008</option>
+                            <option value="">2009</option>
+                            <option value="">2010</option>
+                          </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                <!-- <div class="col-md-6 p-sm-0">
+                      <div class="form-group country-select">
+                        <label for="inputCountry">Country of Residence</label>
+                        <div class="select-input choose-country">
+                          <span></span>
+                            <select id="inputCountry" class="form-control">
+                              <option value="">Country</option>
+                              <option value="">USA</option>
+                              <option value="">Russia</option>
+                              <option value="">China</option>
+                              <option value="">England</option>
+                              <option value="">France</option>
+                              <option value="">Germany</option>
+                              <option value="">Spain</option>
+                              <option value="">Netherland</option>
+                              <option value="">Singapur</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="state">State/Province</label>
+                        <input type="text" class="form-control" id="state" placeholder="e.g. Smith">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="address1">Address Line 1</label>
+                        <input type="text" class="form-control" id="address1" placeholder="e.g. 2707 Par Drive">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="address2">Address Line 2</label>
+                        <input type="text" class="form-control" id="address2" placeholder="e.g. Los Angeles, CA 90013">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" placeholder="e.g. New York">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="zip">Post Code</label>
+                        <input type="text" class="form-control" id="zip" placeholder="e.g. 0000">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Gender</label>
+                    <div class="check-gender">
+                      <div class="custom-radio">
+                        <input type="radio" name="gender" class="custom-control-input" id="Gmale" required>
+                        <label class="custom-control-label" for="Gmale">Male</label>
+                      </div>
+                      <div class="custom-radio">
+                        <input type="radio" name="gender" class="custom-control-input" id="Gfemale" required>
+                        <label class="custom-control-label" for="Gfemale">Female</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-block">
+                  <h4>Personal Documents</h4>
+                  <p>Upload any of the following personal document.</p>
+                  <div class="documents-upload-wrap">
+                    <div class="label">Select Document type</div>
+                    <ul class="nav nav-tabs nav-pills" id="pills-tab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="passport-tab" data-bs-toggle="pill" href="#passport" role="tab" aria-controls="passport" aria-selected="true"><img src="assetss/images/passport.png" alt="">passport</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="nid-tab" data-bs-toggle="pill" href="#nid" role="tab" aria-controls="nid" aria-selected="false"><img src="assetss/images/nid.png" alt="">National id</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="driver-tab" data-bs-toggle="pill" href="#driver" role="tab" aria-controls="driver" aria-selected="false"><img src="assetss/images/driving.png" alt="">Driver’s License</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="passport" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="documents-upload">
+                          <div class="upload-item">
+                            <input type="file" id="input1" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input1" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div id="p-input1" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">Passport Cover</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                          <div class="upload-item">
+                            <input type="file" id="input2" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input2" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div  id="p-input2" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">Passport Data Page</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                          <div class="upload-item">
+                            <input type="file" id="input3" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input3" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div  id="p-input3" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">Selfie With Passport</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                        </div>
+                        <div class="conditions">
+                          <ul>
+                            <li class="complete">File accepted: JPEG/JPG/PNG (Max size: 250 KB)</li>
+                            <li>Document should be good condition</li>
+                            <li>Document must be  valid period</li>
+                            <li>Face must be clear visible</li>
+                            <li>Note has today’s date</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="nid" role="tabpanel" aria-labelledby="nid-tab">
+                        <div class="documents-upload">
+                          <div class="upload-item">
+                            <input type="file" id="input4" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input4" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div id="p-input4" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">National ID Front</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                          <div class="upload-item">
+                            <input type="file" id="input5" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input5" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div id="p-input5" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">National ID Back</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                          <div class="upload-item">
+                            <input type="file" id="input6" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input6" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div id="p-input6" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">Selfie With National ID</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                        </div>
+                        <div class="conditions">
+                          <ul>
+                            <li class="complete">File accepted: JPEG/JPG/PNG (Max size: 250 KB)</li>
+                            <li>Document should be good condition</li>
+                            <li>Document must be  valid period</li>
+                            <li>Face must be clear visible</li>
+                            <li>Note has today’s date</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="driver" role="tabpanel" aria-labelledby="driver-tab">
+                        <div class="documents-upload">
+                          <div class="upload-item">
+                            <input type="file" id="input7" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input7" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div id="p-input7" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">License Front</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                          <div class="upload-item">
+                            <input type="file" id="input8" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input8" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div id="p-input8" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">License Back</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                          <div class="upload-item">
+                            <input type="file" id="input9" class="input-file" accept="image/*" hidden />
+                            <label class="btn-upload" for="input9" role="button">
+                              <img src="assetss/images/cloud.png">
+                              <div id="p-input9" class="preview-box"></div>
+                            </label>
+                            <div class="upload-direction"><span class="text">Selfie With License</span><a href="#"><img src="assetss/images/download.png" alt=""></a></div>
+                          </div>
+                        </div>
+                        <div class="conditions">
+                          <ul>
+                            <li class="complete">File accepted: JPEG/JPG/PNG (Max size: 250 KB)</li>
+                            <li>Document should be good condition</li>
+                            <li>Document must be  valid period</li>
+                            <li>Face must be clear visible</li>
+                            <li>Note has today’s date</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="form-group">
+                    <div class="custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customControlValidation1" required="">
+                      <label class="custom-control-label" for="customControlValidation1">I accept the <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy policy</a></label>
+                    </div>
+                  </div>
+                </div> -->
+                </div>
+
+                                
+<button id="addField">Add Field</button>
+
+                <div class="input-block">
+                
+  
+                  <div class="row">
+                    
+                   
+                    <div class="mt-5 mb-5">
+                      <center><h4>எதிர்வாதி</h4></center>
+                    </div>
+  
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputFname">வாதியின் பெயர்:</label>
+                        <input type="text" class="form-control" id="name">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputLname">வயது:</label>
+                        <input type="text" class="form-control" id="age">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group country-select">
+                        <label for="Gender"></label>
+                        <div class="select-input choose-country">
+                          <span></span>
+                          <select id="Gender" class="form-control">
+                            <option value="">த/பெ</option>
+                            <option value="">ம/பெ</option>
+                            <option value="">க/பெ</option>
+  
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputLname">பெயர்:</label>
+                        <input type="text" class="form-control" id="age" placeholder="த/பெ பெயர்">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group country-select">
+                        <label for="Gender">பாலினம்:</label>
+                        <div class="select-input choose-country">
+                          <span></span>
+                          <select id="Gender" class="form-control">
+                            <option value="">ஆண்</option>
+                            <option value="">பெண்</option>
+                            <option value="">மற்றவை</option>
+  
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group country-select">
+                        <label for="Religion">மதம்:</label>
+                        <div class="select-input choose-country">
+                          <span></span>
+                          <select id="Religion" class="form-control">
+                            <option value="">இந்து</option>
+                            <option value="">முஸ்லீம்</option>
+                            <option value="">கிறித்தவம்</option>
+                            <option value="">மற்றவை</option>
+  
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-5 mb-5">
+                      <h4>முகவரி </h4>
+                    </div>
+  
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputFname">முகவரி 1:</label>
+                        <input type="text" class="form-control" id="name">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputFname">முகவரி 2:</label>
+                        <input type="text" class="form-control" id="name">
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group country-select">
+                        <label for="Religion">தாலுகா:</label>
+                        <div class="select-input choose-country">
+                          <span></span>
+                          <select id="Religion" class="form-control">
+                            <option value="">
+                              திண்டுக்கல்</option>
+                            <option value="">வேடசந்தூர்</option>
+                            <option value="">பழனி</option>
+                            <option value="">நிலக்கோட்டை</option>
+                            <option value="">ஒட்டன்சத்திரம்</option>
+                            <option value="">
+                              ஆத்தூர்</option>
+                            <option value="">
+                              நத்தம்</option>
+                            <option value="">கொடைக்கானல்</option>
+  
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group country-select">
+                        <label for="Religion">மாவட்டம்:</label>
+                        <div class="select-input choose-country">
+                          <span></span>
+                          <select id="Religion" class="form-control">
+                            <option value="">
+                              திண்டுக்கல்</option>
+                            <option value="">சென்னை</option>
+                            <option value="">காஞ்சிபுரம்</option>
+                            <option value="">செங்கல்பட்டு</option>
+                            <option value="">திருவள்ளூர்</option>
+                            <option value="">
+                              திருவண்ணாமலை</option>
+                            <option value="">
+                              வேலூர்</option>
+                            <option value="">விழுப்புரம்</option>
+                            <option value="">கள்ளக்குறிச்சி</option>
+                            <option value="">திருப்பத்தூர்</option>
+                            <option value="">இராணிப்பேட்டை</option>
+                            <option value="">அரியலூர்</option>
+                            <option value="">கடலூர்</option>
+                            <option value="">மயிலாடுதுறை</option>
+                            <option value="">நாகப்பட்டினம்</option>
+                            <option value="">பெரம்பலூர்</option>
+                            <option value="">புதுக்கோட்டை</option>
+                            <option value="">தஞ்சாவூர்</option>
+                            <option value="">திருச்சிராப்பள்ளி</option>
+                            <option value="">திருவாரூர்</option>
+                            <option value="">தருமபுரி</option>
+                            <option value="">திண்டுக்கல்</option>
+                            <option value="">கோயம்புத்தூர்</option>
+                            <option value="">கரூர்</option>
+                            <option value="">ஈரோடு</option>
+                            <option value="">கிருஷ்ணகிரி</option>
+                            <option value="">நாமக்கல்</option>
+                            <option value="">நீலகிரி</option>
+                            <option value="">சேலம்</option>
+                            <option value="">திருப்பூர்</option>
+                            <option value="">கன்னியாகுமரி</option>
+                            <option value="">மதுரை</option>
+                            <option value="">இராமநாதபுரம்</option>
+                            <option value="">சிவகங்கை</option>
+                            <option value="">தேனி</option>
+                            <option value="">தூத்துக்குடி</option>
+                            <option value="">திருநெல்வேலி</option>
+                            <option value="">தென்காசி</option>
+                            <option value="">விருதுநகர்</option>
+                           
+                                    
+  
+  
+                          </select>
+              
+                        </div>
+                        
+                      </div>
+                    </div>
+                  
+  
+  
+                  </div>
+                  <button id="addField">Add Field</button>
+                  <div class="input-block">
+                 
+    
+                    <div class="row">
+                   
+                     
+                      <div class="mt-5 mb-5">
+                        <center><h4>தீர்ப்புரை</h4></center>
+                      </div>
+    
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                        
+                         <textarea name="" id="" cols="110" rows="10"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="input-block">
+                 
+    
+                        <div class="row">
+                       
+                         
+                          <div class="mt-5 mb-5">
+                            <center><h4>இறுதி முடிவு</h4></center>
+                          </div>
+        
+                          <div class="col-md-6 p-sm-0">
+                            <div class="form-group">
+                            
+                             <textarea name="" id="" cols="110" rows="10"></textarea>
+                            </div>
+                          </div>
+             
+                     
+
+
+
+
+                <div class="input-block" id="dynamicFields">
+                 
+                </div>
+
+                
+
+                
+<button id="addField">Add Field</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+  <script src="assetss/js/jquery.min.js"></script>
+  <script src="assetss/js/popper.min.js"></script>
+  <script src="assetss/js/bootstrap.min.js"></script>
+
+  <!-- <script src="../assetss/js/owl.carousel.min.js"></script> -->
+  <!-- <script src="../assetss/js/countrySelect.min.js"></script> -->
+
+  <script src="assetss/js/custom.js"></script>
+</body>
+
+<!-- Mirrored from uigaint.com/demo/html/anfra/kyc-2/kyc.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Dec 2023 06:55:32 GMT -->
+
+</html>
