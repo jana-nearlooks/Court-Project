@@ -13,7 +13,6 @@
 <body>
     <h1>Hi.. Im Redirecting</h1>
 </body>
-<<<<<<< HEAD
 </html> -->
 
 
@@ -146,6 +145,4 @@
 	    <script src="assets/js/app.js"></script>
     </body>
 
-=======
->>>>>>> 81257af845a4c37bea65b783a939e3a7c84f95ef
 </html>

@@ -59,6 +59,41 @@
                 </div>
             </div>
         </section>
+
+        <div class="container my-3">
+            <table class="table table-borderd">
+                <thead>
+                    <tr>
+                        <td class="text-center">S.NO</td> 
+                        <td class="text-center">Case</td>
+                        <td class="text-center">Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td class="text-center">aa</td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mx-1">
+                                    <a class="btn btn-sm btn-primary"><span class="mdi mdi-pencil"></span>&nbsp;Edit</a>
+                                </div>
+                                <div class="mx-1">
+                                    <a class="btn btn-sm btn-primary"><span class="mdi mdi-eye-outline"></span>&nbsp;View pdf</a>
+                                </div>
+                                <div class="mx-1">
+                                    <a class="btn btn-sm btn-primary"><span class="mdi mdi-download"></span>&nbsp;Downlaod pdf</a>
+                                </div>
+                                <div class="mx-1">
+                                    <a class="btn btn-sm btn-primary"><span class="mdi mdi-download"></span>&nbsp;Download word</a>
+                                </div>
+                    
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
                 <!-- JAVASCRIPTS -->
 	    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 	    <script src="../assets/js/gumshoe.js"></script>
@@ -70,4 +105,3 @@
 	    <script src="../assets/js/app.js"></script>
     </body>
 </html>
-<h2>Welcom  Admin</h2>
