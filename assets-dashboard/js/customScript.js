@@ -159,3 +159,26 @@ $(document).ready(function(){
         });
     });
 });
+
+$(document).ready(function(){
+    $('.deleteOS').click(function(){
+        var id = $(this).data('id');
+        
+        $.ajax({
+            url:"osDelete.php",
+            method:"POST",
+            data:{id:id},
+            success:function(response){
+                var responseData = JSON.parse(response)
+                toastr[responseData.status](responseData.message);
+                if(responseData.status == "success"){
+                    setTimeout(function() {
+                        window.location.reload();
+                    },2000);
+                }else{
+                    
+                }
+            }
+        });
+    });
+});

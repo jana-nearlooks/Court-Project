@@ -63,7 +63,7 @@
             <div class="d-flex">
               <!-- LOGO -->
               <div class="navbar-brand-box horizontal-logo">
-                <a href="index.html" class="logo logo-dark">
+                <a href="index.php" class="logo logo-dark">
                   <span class="logo-sm">
                     <img src="../assets-dashboard/images/logo-sm.png" alt="" height="22" />
                   </span>
@@ -72,7 +72,7 @@
                   </span>
                 </a>
 
-                <a href="index.html" class="logo logo-light">
+                <a href="index.php" class="logo logo-light">
                   <span class="logo-sm">
                     <img src="../assets-dashboard/images/logo-sm.png" alt="" height="22" />
                   </span>
@@ -129,12 +129,12 @@
 
                     <div class="dropdown-item bg-transparent text-wrap">
                       <a
-                        href="index.html"
+                        href="index.php"
                         class="btn btn-soft-secondary btn-sm rounded-pill"
                         >how to setup <i class="mdi mdi-magnify ms-1"></i
                       ></a>
                       <a
-                        href="index.html"
+                        href="index.php"
                         class="btn btn-soft-secondary btn-sm rounded-pill"
                         >buttons <i class="mdi mdi-magnify ms-1"></i
                       ></a>
@@ -557,7 +557,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link menu-link"
-                  href="index.html"
+                  href="index.php"
                   role="button"
                   aria-expanded="false"
                   aria-controls="sidebarDashboards"
@@ -922,7 +922,7 @@
                                       >Notation</label
                                     >
                                     <select class="form-select complainantNotation" name="complainantNotation[]" id="state">
-                                      <option value=""></option>
+                                      <option value="" selected></option>
                                       <option value="த/பெ">த/பெ</option>
                                       <option value="ம/பெ">ம/பெ</option>
                                       <option value="க/பெ">க/பெ</option>
@@ -952,6 +952,7 @@
                                       >பாலினம்:</label
                                     >
                                     <select class="form-select complainantGender" name="complainantGender[]" id="state">
+                                      <option value="" selected></option>
                                       <option value="ஆண்">ஆண்</option>
                                       <option value="பெண்">பெண்</option>
                                       <option value="மற்றவை">மற்றவை</option>
@@ -965,6 +966,7 @@
                                       >மதம்:</label
                                     >
                                     <select class="form-select complainantReligion" name="complainantReligion[]" id="state">
+                                      <option value="" selected></option>
                                       <option value="இந்து">இந்து</option>
                                       <option value="முஸ்லீம்">முஸ்லீம்</option>
                                       <option value="கிறித்தவம்">கிறித்தவம்</option>
@@ -1013,6 +1015,7 @@
                                       >தாலுகா:</label
                                     >
                                     <select class="form-select complainantTaluk" name="complainantTaluk[]" id="state">
+                                      <option value="" selected></option>
                                       <option value="திண்டுக்கல்">திண்டுக்கல்</option>
                                       <option value="வேடசந்தூர்">வேடசந்தூர்</option>
                                       <option value="பழனி">பழனி</option>
@@ -1031,6 +1034,7 @@
                                       >மாவட்டம்:</label
                                     >
                                     <select class="form-select complainantDistrict" name="complainantDistrict[]" id="state">
+                                      <option value="" selected></option>
                                       <option value="திண்டுக்கல்">திண்டுக்கல்</option>
                                       <option value="சென்னை">சென்னை</option>
                                       <option value="காஞ்சிபுரம்">காஞ்சிபுரம்</option>
@@ -1175,7 +1179,7 @@
                                       >Notation</label
                                     >
                                     <select class="form-select defendantNotation" name="defendantNotation[]" id="state">
-                                      <option value=""></option>
+                                    <option value="" selected></option>
                                       <option value="த/பெ">த/பெ</option>
                                       <option value="ம/பெ">ம/பெ</option>
                                       <option value="க/பெ">க/பெ</option>
@@ -1205,9 +1209,10 @@
                                       >பாலினம்:</label
                                     >
                                     <select class="form-select defendantGender" name="defendantGender[]" id="state">
-                                      <option value="">ஆண்</option>
-                                      <option value="">பெண்</option>
-                                      <option value="">மற்றவை</option>
+                                      <option value="" selected></option>
+                                      <option value="ஆண்">ஆண்</option>
+                                      <option value="பெண்">பெண்</option>
+                                      <option value="மற்றவை">மற்றவை</option>
                                     </select>
                                     <div class="invalid-feedback">
                                       பாலினம் is required
@@ -1218,10 +1223,11 @@
                                       >மதம்:</label
                                     >
                                     <select class="form-select defendantReligion" name="defendantReligion[]" id="state">
-                                      <option value="">இந்து</option>
-                                      <option value="">முஸ்லீம்</option>
-                                      <option value="">கிறித்தவம்</option>
-                                      <option value="">மற்றவை</option>
+                                      <option value="" selected></option>
+                                      <option value="இந்து">இந்து</option>
+                                      <option value="முஸ்லீம்">முஸ்லீம்</option>
+                                      <option value="கிறித்தவம்">கிறித்தவம்</option>
+                                      <option value="மற்றவை">மற்றவை</option>
                                     </select>
                                     <div class="invalid-feedback">
                                       மதம் is required
@@ -1266,6 +1272,7 @@
                                       >தாலுகா:</label
                                     >
                                     <select class="form-select defendantTaluk" name="defendantTaluk[]" id="state">
+                                      <option value="" selected></option>
                                       <option value="திண்டுக்கல்">திண்டுக்கல்</option>
                                       <option value="வேடசந்தூர்">வேடசந்தூர்</option>
                                       <option value="பழனி">பழனி</option>
@@ -1284,6 +1291,7 @@
                                       >மாவட்டம்:</label
                                     >
                                     <select class="form-select defendantDistrict" name="defendantDistrict[]" id="state">
+                                      <option value="" selected></option>
                                       <option value="திண்டுக்கல்">திண்டுக்கல்</option>
                                       <option value="சென்னை">சென்னை</option>
                                       <option value="காஞ்சிபுரம்">காஞ்சிபுரம்</option>
