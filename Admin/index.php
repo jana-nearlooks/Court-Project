@@ -1,3 +1,37 @@
+<?php
+
+require '../config.php';
+
+$sql = "select * from os ";
+
+$queryExec = mysqli_query($conn, $sql);
+
+$osDetails = mysqli_fetch_all($queryExec, MYSQLI_ASSOC);
+
+// echo (gettype($osDetails))."<br>";
+// echo count($osDetails).'<br>';
+
+// echo $sql.'<br>';
+
+// echo '<pre>';
+// var_dump($osDetails);
+
+// while ($osDetail = mysqli_fetch_assoc($queryExec)) {
+//   echo $osDetail['case_no'] . '<br>';
+// }
+
+// echo (gettype($osDetails))."<br>";
+
+// foreach($osDetails as $osDetail){
+//     echo $osDetail['case_no'] . '<br>';
+// }
+
+
+
+// exit;
+
+?>
+
 <!DOCTYPE html>
 <html
   lang="en"
@@ -48,6 +82,8 @@
     <link href="../assets-dashboard/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="../assets-dashboard/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="../assets-dashboard/css/toastr.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="../assets-dashboard/css/custom.min.css" rel="stylesheet" type="text/css" />
   </head>
@@ -61,7 +97,7 @@
             <div class="d-flex">
               <!-- LOGO -->
               <div class="navbar-brand-box horizontal-logo">
-                <a href="index.html" class="logo logo-dark">
+                <a href="index.php" class="logo logo-dark">
                   <span class="logo-sm">
                     <img src="../assets-dashboard/images/logo-sm.png" alt="" height="22" />
                   </span>
@@ -70,7 +106,7 @@
                   </span>
                 </a>
 
-                <a href="index.html" class="logo logo-light">
+                <a href="index.php" class="logo logo-light">
                   <span class="logo-sm">
                     <img src="../assets-dashboard/images/logo-sm.png" alt="" height="22" />
                   </span>
@@ -127,12 +163,12 @@
 
                     <div class="dropdown-item bg-transparent text-wrap">
                       <a
-                        href="index.html"
+                        href="index.php"
                         class="btn btn-soft-secondary btn-sm rounded-pill"
                         >how to setup <i class="mdi mdi-magnify ms-1"></i
                       ></a>
                       <a
-                        href="index.html"
+                        href="index.php"
                         class="btn btn-soft-secondary btn-sm rounded-pill"
                         >buttons <i class="mdi mdi-magnify ms-1"></i
                       ></a>
@@ -443,7 +479,7 @@
         <!-- LOGO -->
         <div class="navbar-brand-box">
           <!-- Dark Logo-->
-          <a href="index.html" class="logo logo-dark">
+          <a href="index.php" class="logo logo-dark">
             <span class="logo-sm">
               <img src="../assets-dashboard/images/logo-sm.png" alt="" height="22" />
             </span>
@@ -452,7 +488,7 @@
             </span>
           </a>
           <!-- Light Logo-->
-          <a href="index.html" class="logo logo-light">
+          <a href="index.php" class="logo logo-light">
             <span class="logo-sm">
               <img src="../assets-dashboard/images/logo-sm.png" alt="" height="22" />
             </span>
@@ -555,7 +591,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link menu-link"
-                  href="index.html"
+                  href="index.php"
                   role="button"
                   aria-expanded="false"
                   aria-controls="sidebarDashboards"
@@ -956,38 +992,46 @@
                             <thead class="text-muted table-light">
                               <tr>
                                 <th scope="col">Case ID</th>
-                                <th scope="col">Vathi</th>
-                                <th scope="col">Ethir Vathi</th>
+                                <!-- <th scope="col">Vathi</th> -->
+                                <!-- <th scope="col">Ethir Vathi</th> -->
                                 <th scope="col">Status</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Action</th>
                               </tr>
                             </thead>
                             <tbody>
+                            <?php
+
+                              foreach($osDetails as $osDetail){
+                            ?>
                               <tr>
-                                <td>001</td>
-                                <td>Ramesh and 2 Others</td>
-                                <td>Suresh</td>
+                                <td><?php echo $osDetail['case_no']; ?></td>
+                                <!-- <td>Ramesh and 2 Others</td> -->
+                                <!-- <td>Suresh</td> -->
                                 <td>
                                   <span class="text-success">Completed</span>
                                 </td>
-                                <td>20.20.2023</td>
+                                <td><?php echo $osDetail['created_at']; ?></td>
                                 <td>
                                   <div class="hstack gap-3 flex-wrap">
                                     <a
                                       href="javascript:void(0);"
                                       class="link-success fs-15"
+                                      data-id="<?php echo $osDetail['id']; ?>"
                                       ><i class="ri-edit-2-line"></i
                                     ></a>
                                     <a
                                       href="javascript:void(0);"
-                                      class="link-danger fs-15"
+                                      class="link-danger fs-15 deleteOS"
+                                      data-id="<?php echo $osDetail['id']; ?>"
                                       ><i class="ri-delete-bin-line"></i
                                     ></a>
                                   </div>
                                 </td>
                               </tr>
-
+                            <?php
+                              }
+                            ?>
                               <!-- end tr -->
                             </tbody>
                             <!-- end tbody -->
@@ -1052,6 +1096,7 @@
     </div>
 
     <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../assets-dashboard/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets-dashboard/libs/simplebar/simplebar.min.js"></script>
     <script src="../assets-dashboard/libs/node-waves/waves.min.js"></script>
@@ -1074,5 +1119,8 @@
 
     <!-- App js -->
     <script src="../assets-dashboard/js/app.js"></script>
+
+    <script src="../assets-dashboard/js/pages/toastr.min.js"></script>
+    <script src="../assets-dashboard/js/customScript.js"></script>
   </body>
 </html>
