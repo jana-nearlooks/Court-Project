@@ -48,6 +48,8 @@
     <link href="../assets-dashboard/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="../assets-dashboard/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="../assets-dashboard/css/toastr.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="../assets-dashboard/css/custom.min.css" rel="stylesheet" type="text/css" />
   </head>
@@ -97,7 +99,7 @@
               </button>
 
               <!-- App Search-->
-              <form class="app-search d-none d-md-block">
+              <form id="" class="app-search d-none d-md-block">
                 <div class="position-relative">
                   <input
                     type="text"
@@ -279,7 +281,7 @@
                           placeholder="Search ..."
                           aria-label="Recipient's username"
                         />
-                        <button class="btn btn-primary" type="submit">
+                        <button class="btn btn-primary" type="button">
                           <i class="mdi mdi-magnify"></i>
                         </button>
                       </div>
@@ -743,7 +745,7 @@
               </div>
               <!-- end card header -->
               <div class="card-body form-steps">
-                <form class="vertical-navs-step">
+                <form id="osMoneySuit" class="vertical-navs-step">
                   <div class="row gy-5">
                     <div class="col-lg-3">
                       <div
@@ -752,7 +754,7 @@
                         aria-orientation="vertical"
                       >
                         <button
-                          class="nav-link done"
+                          class="nav-link active"
                           id="v-pills-bill-info-tab"
                           data-bs-toggle="pill"
                           data-bs-target="#v-pills-bill-info"
@@ -770,7 +772,7 @@
                           வாதி
                         </button>
                         <button
-                          class="nav-link active"
+                          class="nav-link"
                           id="v-pills-bill-address-tab"
                           data-bs-toggle="pill"
                           data-bs-target="#v-pills-bill-address"
@@ -778,7 +780,7 @@
                           role="tab"
                           aria-controls="v-pills-bill-address"
                           aria-selected="true"
-                          data-position="1"
+                          data-position="-1"
                         >
                           <span class="step-title me-2">
                             <i class="ri-close-circle-fill step-icon me-2"></i>
@@ -831,24 +833,12 @@
                     <div class="col-lg-6 ">
                       <div class="px-lg-4">
                         <div class="tab-content">
-                          <div class="tab-pane fade"
+                          <div class="tab-pane fade active show complainantTab"
                             id="v-pills-bill-info"
                             role="tabpanel"
                             aria-labelledby="v-pills-bill-info-tab"
                           >
-
-                           <!-- vaadhi starts -->
-                            <div class="complainant my-3">                          
-                              <div class="">
-                                <h5 class="fw-bold">வாதி<span class="complainantCount ms-1">1</span></h5>
-                                <p class="text-muted">
-                                  Fill all information below
-                                </p>
-                              </div>
-
-                              <div>
-                                <div class="row g-3">
-                                  <div class="col-sm-6">
+                          <div class="col-sm-6">
                                     <label for="firstName" class="form-label"
                                       >அசல் வழக்கு எண்:</label
                                     >
@@ -880,6 +870,18 @@
                                       Please enter a CNR No
                                     </div>
                                   </div>
+                           <!-- vaadhi starts -->
+                            <div class="complainant my-3">                          
+                              <div class="">
+                                <h5 class="fw-bold">வாதி<span class="complainantCount ms-1">1</span></h5>
+                                <p class="text-muted">
+                                  Fill all information below
+                                </p>
+                              </div>
+
+                              <div>
+                                <div class="row g-3">
+                                  
 
                                   <div class="col-md-3">
                                     <label for="cc-number" class="form-label"
@@ -1117,7 +1119,7 @@
 
 
                          
-                          <div class="tab-pane fade active show"
+                          <div class="tab-pane fade "
                             id="v-pills-bill-address"
                             role="tabpanel"
                             aria-labelledby="v-pills-bill-address-tab"
@@ -1350,7 +1352,7 @@
                               <button
                                 type="button"
                                 class="btn btn-success btn-label right ms-auto nexttab nexttab"
-                                data-nexttab="v-pills-bill-address-tab"
+                                data-nexttab="v-pills-payment-tab"
                               >
                                 <i
                                   class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"
@@ -1380,9 +1382,10 @@
                                 >Description</label
                               >
                               <textarea
-                                class="form-control"
+                                class="form-control judgement"
                                 placeholder="Enter Description"
-                                id="des-info-description-input"
+                                nae="judgement"
+                                id="judgement"
                                 rows="20"
                                 required=""
                               ></textarea>
@@ -1435,9 +1438,10 @@
                                 >Description</label
                               >
                               <textarea
-                                class="form-control"
+                                class="form-control finalJudgement"
                                 placeholder="Enter Description"
-                                id="des-info-description-input"
+                                name="finalJudgement"
+                                id="finalJudgement"
                                 rows="20"
                                 required=""
                               ></textarea>
@@ -1459,6 +1463,7 @@
                               </button>
                               <button
                                 type="button"
+                                id="submit"
                                 class="btn btn-success btn-label right ms-auto nexttab nexttab"
                                 data-nexttab="v-pills-finish-tab"
                               >
@@ -1564,75 +1569,12 @@
 
     <!-- App js -->
     <script src="../assets-dashboard/js/app.js"></script>
+
+    <script src="../assets-dashboard/js/pages/toastr.min.js"></script>
+    <script src="../assets-dashboard/js/customScript.js"></script>
   </body>
 </html>
 
-<script>
-  $(document).ready(function () {
-    var counter = 1;
-
-    function updateIdsAndClasses(section, counter) {
-      section.find('[id]').each(function () {
-        var oldId = $(this).attr('id');
-        var newId = oldId + counter;
-        $(this).attr('id', newId);
-      });
-
-      section.find('.complainantCount').text(counter + 1);
-      section.find('.defendantCount').text(counter + 1);
-
-      // Update input classes with classname+counter for subsequent elements
-      // section.find('.form-control:not(:first)').each(function() {
-      //   var oldClass = $(this).attr('class');
-      //   var newClass = oldClass.replace(/\d+/, counter);
-      //   $(this).attr('class', newClass);
-      // });
-
-      // section.find('.form-select:not(:first)').each(function() {
-      //   var oldClass = $(this).attr('class');
-      //   var newClass = oldClass.replace(/\d+/, counter);
-      //   $(this).attr('class', newClass);
-      // });
-    }
-
-    $(document).on("click", ".add-btn", function () {
-  
-      var clonedSection = $(".complainant").last().clone();
-
-      updateIdsAndClasses(clonedSection, counter);
-
-      clonedSection.insertAfter($(".complainant").last());
-      counter++;
-    });
-
-    $(document).on("click", ".delete-btn", function () {
-      if ($(".complainant").length > 1) {
-        $(this).closest(".complainant").remove();
-      } else {
-        // alert("Cannot delete the last section.");
-      }
-    });
-
-    $(document).on("click", ".defendant-add-btn", function () {
-      var clonedSection = $(".defendant").last().clone();
-
-      updateIdsAndClasses(clonedSection, counter);
-
-      clonedSection.insertAfter($(".defendant").last());
-      counter++;
-    });
-
-    $(document).on("click", ".defendant-delete-btn", function () {
-      if ($(".defendant").length > 1) {
-        $(this).closest(".defendant").remove();
-      } else {
-        // alert("Cannot delete the last section.");
-      }
-    });
-
-
-  });
-</script>
 
 
 
