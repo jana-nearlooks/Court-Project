@@ -1015,7 +1015,7 @@ $osDetails = mysqli_fetch_all($queryExec, MYSQLI_ASSOC);
                                 <td>
                                   <div class="hstack gap-3 flex-wrap">
                                     <a
-                                      href="javascript:void(0);"
+                                      href="osEdit.php?id=<?php echo $osDetail['id']; ?>"
                                       class="link-success fs-15"
                                       data-id="<?php echo $osDetail['id']; ?>"
                                       ><i class="ri-edit-2-line"></i
