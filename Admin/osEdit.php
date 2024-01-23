@@ -898,277 +898,281 @@ $defendants = json_decode($osDetails['defendants'], true);
                             if(!empty($osDetails)){
                                     foreach($complainants as $key=> $complainant){
                                 ?>
-                                    <div class="">
-                                        <h5 class="fw-bold">வாதி<span class="complainantCount ms-1"><?php echo ($key+1); ?></span></h5>
-                                        <p class="text-muted">
-                                        Fill all information below
-                                        </p>
-                                    </div>
-                                
-                                    <div class="my-3">
-                                        <div class="row g-3">
-                                    
-                                            <div class="col-md-3">
-                                                <label for="cc-number" class="form-label"
-                                                >வாதியின் பெயர்:</label
-                                                >
-                                                <input
-                                                type="text"
-                                                class="form-control complainantName"
-                                                name="complainantName[]"
-                                                id="vathi-name"
-                                                placeholder=""
-                                                required=""
-                                                value="<?php echo $complainant['name']; ?>"
-                                                />
-                                                <div class="invalid-feedback">
-                                                வாதியின் பெயர் is required
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3">
-                                                <label for="cc-expiration" class="form-label"
-                                                >வயது:</label
-                                                >
-                                                <input
-                                                type="text"
-                                                class="form-control complainantAge"
-                                                name="complainantAge[]"
-                                                id="vathi-age"
-                                                placeholder=""
-                                                required=""
-                                                value="<?php echo $complainant['age']; ?>"
-                                                />
-                                                <div class="invalid-feedback">
-                                                வயது is required
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3">
-                                                <label for="state" class="form-label"
-                                                >Notation</label
-                                                >
-                                                <select class="form-select complainantNotation" name="complainantNotation[]" id="state">
-                                                <option value="" selected></option>
-                                                <option value="த/பெ" <?=$complainant['notation'] == 'த/பெ' ? ' selected="selected"' : '';?> >த/பெ</option>
-                                                <option value="ம/பெ" <?=$complainant['notation'] == 'ம/பெ' ? ' selected="selected"' : '';?> >ம/பெ</option>
-                                                <option value="க/பெ" <?=$complainant['notation'] == 'க/பெ' ? ' selected="selected"' : '';?>>க/பெ</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                Please select a Notation
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label for="cc-cvv" class="form-label"
-                                                >பெயர்:</label
-                                                >
-                                                <input
-                                                type="text"
-                                                class="form-control complainantNotationName"
-                                                name="complainantNotationName[]"
-                                                id="cc-cvv"
-                                                placeholder=""
-                                                required=""
-                                                value="<?php echo $complainant['notationName']; ?>"
-                                                />
-                                                <div class="invalid-feedback">
-                                                பெயர் required
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="state" class="form-label"
-                                                >பாலினம்:</label
-                                                >
-                                                <select class="form-select complainantGender" name="complainantGender[]" id="state">
-                                                <option value="" selected></option>
-                                                <option value="ஆண்" <?=$complainant['gender'] == 'ஆண்' ? ' selected="selected"' : '';?> >ஆண்</option>
-                                                <option value="பெண்" <?=$complainant['gender'] == 'பெண்' ? ' selected="selected"' : '';?> >பெண்</option>
-                                                <option value="மற்றவை" <?=$complainant['gender'] == 'மற்றவை' ? ' selected="selected"' : '';?> >மற்றவை</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                பாலினம் is required
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="state" class="form-label"
-                                                >மதம்:</label
-                                                >
-                                                <select class="form-select complainantReligion" name="complainantReligion[]" id="state">
-                                                <option value="" selected></option>
-                                                <option value="இந்து" <?=$complainant['religion'] == 'இந்து' ? ' selected="selected"' : '';?> >இந்து</option>
-                                                <option value="முஸ்லீம்" <?=$complainant['religion'] == 'முஸ்லீம்' ? ' selected="selected"' : '';?> >முஸ்லீம்</option>
-                                                <option value="கிறித்தவம்" <?=$complainant['religion'] == 'கிறித்தவம்' ? ' selected="selected"' : '';?>>கிறித்தவம்</option>
-                                                <option value="மற்றவை" <?=$complainant['religion'] == 'மற்றவை' ? ' selected="selected"' : '';?> >மற்றவை</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                மதம் is required
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="cc-expiration" class="form-label"
-                                                >முகவரி 1:</label
-                                                >
-                                                <input
-                                                type="text"
-                                                class="form-control complainantaddress-1"
-                                                name="complainantAddress-1[]"
-                                                id="vathi-age"
-                                                placeholder=""
-                                                required=""
-                                                value="<?php echo $complainant['address1']; ?>"
-                                                />
-                                                <div class="invalid-feedback">
-                                                முகவரி 1: is required
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="cc-expiration" class="form-label"
-                                                >முகவரி 2:</label
-                                                >
-                                                <input
-                                                type="text"
-                                                class="form-control complainantAddress-2"
-                                                name="complainantAddress-2[]"
-                                                id="vathi-age"
-                                                placeholder=""
-                                                required=""
-                                                value="<?php echo $complainant['address2']; ?>"
-                                                />
-                                                <div class="invalid-feedback">
-                                                முகவரி 2: is required
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <label for="state" class="form-label"
-                                                >தாலுகா:</label
-                                                >
-                                                <select class="form-select complainantTaluk" name="complainantTaluk[]" id="state">
-                                                <option value="" selected></option>
-                                                <option value="திண்டுக்கல்" <?=$complainant['taluk'] == 'திண்டுக்கல்' ? ' selected="selected"' : '';?> >திண்டுக்கல்</option>
-                                                <option value="வேடசந்தூர்" <?=$complainant['taluk'] == 'வேடசந்தூர்' ? ' selected="selected"' : '';?> >வேடசந்தூர்</option>
-                                                <option value="பழனி" <?=$complainant['taluk'] == 'பழனி' ? ' selected="selected"' : '';?> >பழனி</option>
-                                                <option value="நிலக்கோட்டை" <?=$complainant['taluk'] == 'நிலக்கோட்டை' ? ' selected="selected"' : '';?> >நிலக்கோட்டை</option>
-                                                <option value="ஒட்டன்சத்திரம்" <?=$complainant['taluk'] == 'ஒட்டன்சத்திரம்' ? ' selected="selected"' : '';?> >ஒட்டன்சத்திரம்</option>
-                                                <option value="ஆத்தூர்" <?=$complainant['taluk'] == 'ஆத்தூர்' ? ' selected="selected"' : '';?>>ஆத்தூர்</option>
-                                                <option value="நத்தம்" <?=$complainant['taluk'] == 'நத்தம்' ? ' selected="selected"' : '';?> >நத்தம்</option>
-                                                <option value="கொடைக்கானல்" <?=$complainant['taluk'] == 'கொடைக்கானல்' ? ' selected="selected"' : '';?> >கொடைக்கானல்</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                தாலுகா is required
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="state" class="form-label"
-                                                >மாவட்டம்:</label
-                                                >
-                                                <select class="form-select complainantDistrict" name="complainantDistrict[]" id="state">
-                                                <option value="" selected></option>
-                                                <option value="திண்டுக்கல்" <?=$complainant['district'] == 'திண்டுக்கல்' ? ' selected="selected"' : '';?> >திண்டுக்கல்</option>
-
-                                                <option value="சென்னை" <?=$complainant['district'] == 'சென்னை' ? ' selected="selected"' : '';?> >சென்னை</option>
-
-                                                <option value="காஞ்சிபுரம்" <?=$complainant['district'] == 'காஞ்சிபுரம்' ? ' selected="selected"' : '';?> >காஞ்சிபுரம்</option>
-
-                                                <option value="செங்கல்பட்டு" <?=$complainant['district'] == 'செங்கல்பட்டு' ? ' selected="selected"' : '';?> >செங்கல்பட்டு</option>
-
-                                                <option value="திருவள்ளூர்" <?=$complainant['district'] == 'திருவள்ளூர்' ? ' selected="selected"' : '';?> >திருவள்ளூர்</option>
-
-                                                <option value="திருவண்ணாமலை" <?=$complainant['district'] == 'திருவண்ணாமலை' ? ' selected="selected"' : '';?> >திருவண்ணாமலை</option>
-
-                                                <option value="வேலூர்" <?=$complainant['district'] == 'வேலூர்' ? ' selected="selected"' : '';?> >வேலூர்</option>
-
-                                                <option value="விழுப்புரம்" <?=$complainant['district'] == 'விழுப்புரம்' ? ' selected="selected"' : '';?> >விழுப்புரம்</option>
-
-                                                <option value="கள்ளக்குறிச்சி" <?=$complainant['district'] == 'கள்ளக்குறிச்சி' ? ' selected="selected"' : '';?> >கள்ளக்குறிச்சி</option>
-
-                                                <option value="திருப்பத்தூர்" <?=$complainant['district'] == 'திருப்பத்தூர்' ? ' selected="selected"' : '';?> >திருப்பத்தூர்</option>
-
-                                                <option value="இராணிப்பேட்டை" <?=$complainant['district'] == 'இராணிப்பேட்டை' ? ' selected="selected"' : '';?> >இராணிப்பேட்டை</option>
-
-                                                <option value="அரியலூர்" <?=$complainant['district'] == 'அரியலூர்' ? ' selected="selected"' : '';?> >அரியலூர்</option>
-
-                                                <option value="கடலூர்" <?=$complainant['district'] == 'கடலூர்' ? ' selected="selected"' : '';?> >கடலூர்</option>
-
-                                                <option value="மயிலாடுதுறை" <?=$complainant['district'] == 'மயிலாடுதுறை' ? ' selected="selected"' : '';?> >மயிலாடுதுறை</option>
-
-                                                <option value="நாகப்பட்டினம்" <?=$complainant['district'] == 'நாகப்பட்டினம்' ? ' selected="selected"' : '';?> >நாகப்பட்டினம்</option>
-
-                                                <option value="பெரம்பலூர்" <?=$complainant['district'] == 'பெரம்பலூர்' ? ' selected="selected"' : '';?> >பெரம்பலூர்</option>
-
-                                                <option value="புதுக்கோட்டை" <?=$complainant['district'] == 'புதுக்கோட்டை' ? ' selected="selected"' : '';?> >புதுக்கோட்டை</option>
-
-                                                <option value="தஞ்சாவூர்" <?=$complainant['district'] == 'தஞ்சாவூர்' ? ' selected="selected"' : '';?> >தஞ்சாவூர்</option>
-                                                
-                                                <option value="திருச்சிராப்பள்ளி" <?=$complainant['district'] == 'திருச்சிராப்பள்ளி' ? ' selected="selected"' : '';?> >திருச்சிராப்பள்ளி</option>
-
-                                                <option value="திருவாரூர்" <?=$complainant['district'] == 'திருவாரூர்' ? ' selected="selected"' : '';?> >திருவாரூர்</option>
-
-                                                <option value="தருமபுரி" <?=$complainant['district'] == 'தருமபுரி' ? ' selected="selected"' : '';?> >தருமபுரி</option>
-
-                                                <option value="திண்டுக்கல்" <?=$complainant['district'] == 'திண்டுக்கல்' ? ' selected="selected"' : '';?> >திண்டுக்கல்</option>
-
-                                                <option value="கோயம்புத்தூர்" <?=$complainant['district'] == 'கோயம்புத்தூர்' ? ' selected="selected"' : '';?> >கோயம்புத்தூர்</option>
-
-                                                <option value="கரூர்" <?=$complainant['district'] == 'கரூர்' ? ' selected="selected"' : '';?> >கரூர்</option>
-
-                                                <option value="ஈரோடு" <?=$complainant['district'] == 'ஈரோடு' ? ' selected="selected"' : '';?> >ஈரோடு</option>
-
-                                                <option value="கிருஷ்ணகிரி" <?=$complainant['district'] == 'கிருஷ்ணகிரி' ? ' selected="selected"' : '';?> >கிருஷ்ணகிரி</option>
-
-                                                <option value="நாமக்கல்" <?=$complainant['district'] == 'நாமக்கல்' ? ' selected="selected"' : '';?> >நாமக்கல்</option>
-
-                                                <option value="நீலகிரி" <?=$complainant['district'] == 'நீலகிரி' ? ' selected="selected"' : '';?> >நீலகிரி</option>
-
-                                                <option value="சேலம்" <?=$complainant['district'] == 'சேலம்' ? ' selected="selected"' : '';?>>சேலம்</option>
-
-                                                <option value="திருப்பூர்" <?=$complainant['district'] == 'திருப்பூர்' ? ' selected="selected"' : '';?> >திருப்பூர்</option>
-
-                                                <option value="கன்னியாகுமரி" <?=$complainant['district'] == 'கன்னியாகுமரி' ? ' selected="selected"' : '';?> >கன்னியாகுமரி</option>
-
-                                                <option value="மதுரை" <?=$complainant['district'] == 'மதுரை' ? ' selected="selected"' : '';?> >மதுரை</option>
-
-                                                <option value="இராமநாதபுரம்" <?=$complainant['district'] == 'இராமநாதபுரம்' ? ' selected="selected"' : '';?> >இராமநாதபுரம்</option>
-
-                                                <option value="சிவகங்கை" <?=$complainant['district'] == 'சிவகங்கை' ? ' selected="selected"' : '';?> >சிவகங்கை</option>
-
-                                                <option value="தேனி" <?=$complainant['district'] == 'தேனி' ? ' selected="selected"' : '';?> >தேனி</option>
-
-                                                <option value="தூத்துக்குடி" <?=$complainant['district'] == 'தூத்துக்குடி' ? ' selected="selected"' : '';?> >தூத்துக்குடி</option>
-
-                                                <option value="திருநெல்வேலி" <?=$complainant['district'] == 'திருநெல்வேலி' ? ' selected="selected"' : '';?> >திருநெல்வேலி</option>
-
-                                                <option value="தென்காசி" <?=$complainant['district'] == 'தென்காசி' ? ' selected="selected"' : '';?> >தென்காசி</option>
-
-                                                <option value="விருதுநகர்" <?=$complainant['district'] == 'விருதுநகர்' ? ' selected="selected"' : '';?> >விருதுநகர்</option>
-
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                மாவட்டம் is required
-                                                </div>
-                                            </div>
+                                    <div class="complainantSection">
 
                                     
-                                            <div class="col-md-4" style="margin-top: 43px">
-                                                <button
-                                                type="button"
-                                                class="btn btn-success add-btn"
-                                                data-bs-toggle="modal"
-                                                id="create-btn"
-                                                data-bs-target="#showModal"
-                                                >
-                                                <i
-                                                    class="ri-add-line align-bottom me-1"
-                                                ></i>
-                                                Add
-                                                </button>
-                                                <button class="btn btn-soft-danger delete-btn">
-                                                <i class="ri-delete-bin-2-line"></i> Delete
-                                                </button>
-                                            </div>
+                                        <div class="">
+                                            <h5 class="fw-bold">வாதி<span class="complainantCount ms-1"><?php echo ($key+1); ?></span></h5>
+                                            <p class="text-muted">
+                                            Fill all information below
+                                            </p>
                                         </div>
-                                
+                            
+                                        <div class="my-3">
+                                            <div class="row g-3">
+                                        
+                                                <div class="col-md-3">
+                                                    <label for="cc-number" class="form-label"
+                                                    >வாதியின் பெயர்:</label
+                                                    >
+                                                    <input
+                                                    type="text"
+                                                    class="form-control complainantName"
+                                                    name="complainantName[]"
+                                                    id="vathi-name"
+                                                    placeholder=""
+                                                    required=""
+                                                    value="<?php echo $complainant['name']; ?>"
+                                                    />
+                                                    <div class="invalid-feedback">
+                                                    வாதியின் பெயர் is required
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <label for="cc-expiration" class="form-label"
+                                                    >வயது:</label
+                                                    >
+                                                    <input
+                                                    type="text"
+                                                    class="form-control complainantAge"
+                                                    name="complainantAge[]"
+                                                    id="vathi-age"
+                                                    placeholder=""
+                                                    required=""
+                                                    value="<?php echo $complainant['age']; ?>"
+                                                    />
+                                                    <div class="invalid-feedback">
+                                                    வயது is required
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <label for="state" class="form-label"
+                                                    >Notation</label
+                                                    >
+                                                    <select class="form-select complainantNotation" name="complainantNotation[]" id="state">
+                                                    <option value="" selected></option>
+                                                    <option value="த/பெ" <?=$complainant['notation'] == 'த/பெ' ? ' selected="selected"' : '';?> >த/பெ</option>
+                                                    <option value="ம/பெ" <?=$complainant['notation'] == 'ம/பெ' ? ' selected="selected"' : '';?> >ம/பெ</option>
+                                                    <option value="க/பெ" <?=$complainant['notation'] == 'க/பெ' ? ' selected="selected"' : '';?>>க/பெ</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                    Please select a Notation
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label for="cc-cvv" class="form-label"
+                                                    >பெயர்:</label
+                                                    >
+                                                    <input
+                                                    type="text"
+                                                    class="form-control complainantNotationName"
+                                                    name="complainantNotationName[]"
+                                                    id="cc-cvv"
+                                                    placeholder=""
+                                                    required=""
+                                                    value="<?php echo $complainant['notationName']; ?>"
+                                                    />
+                                                    <div class="invalid-feedback">
+                                                    பெயர் required
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="state" class="form-label"
+                                                    >பாலினம்:</label
+                                                    >
+                                                    <select class="form-select complainantGender" name="complainantGender[]" id="state">
+                                                    <option value="" selected></option>
+                                                    <option value="ஆண்" <?=$complainant['gender'] == 'ஆண்' ? ' selected="selected"' : '';?> >ஆண்</option>
+                                                    <option value="பெண்" <?=$complainant['gender'] == 'பெண்' ? ' selected="selected"' : '';?> >பெண்</option>
+                                                    <option value="மற்றவை" <?=$complainant['gender'] == 'மற்றவை' ? ' selected="selected"' : '';?> >மற்றவை</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                    பாலினம் is required
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="state" class="form-label"
+                                                    >மதம்:</label
+                                                    >
+                                                    <select class="form-select complainantReligion" name="complainantReligion[]" id="state">
+                                                    <option value="" selected></option>
+                                                    <option value="இந்து" <?=$complainant['religion'] == 'இந்து' ? ' selected="selected"' : '';?> >இந்து</option>
+                                                    <option value="முஸ்லீம்" <?=$complainant['religion'] == 'முஸ்லீம்' ? ' selected="selected"' : '';?> >முஸ்லீம்</option>
+                                                    <option value="கிறித்தவம்" <?=$complainant['religion'] == 'கிறித்தவம்' ? ' selected="selected"' : '';?>>கிறித்தவம்</option>
+                                                    <option value="மற்றவை" <?=$complainant['religion'] == 'மற்றவை' ? ' selected="selected"' : '';?> >மற்றவை</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                    மதம் is required
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="cc-expiration" class="form-label"
+                                                    >முகவரி 1:</label
+                                                    >
+                                                    <input
+                                                    type="text"
+                                                    class="form-control complainantaddress-1"
+                                                    name="complainantAddress-1[]"
+                                                    id="vathi-age"
+                                                    placeholder=""
+                                                    required=""
+                                                    value="<?php echo $complainant['address1']; ?>"
+                                                    />
+                                                    <div class="invalid-feedback">
+                                                    முகவரி 1: is required
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="cc-expiration" class="form-label"
+                                                    >முகவரி 2:</label
+                                                    >
+                                                    <input
+                                                    type="text"
+                                                    class="form-control complainantAddress-2"
+                                                    name="complainantAddress-2[]"
+                                                    id="vathi-age"
+                                                    placeholder=""
+                                                    required=""
+                                                    value="<?php echo $complainant['address2']; ?>"
+                                                    />
+                                                    <div class="invalid-feedback">
+                                                    முகவரி 2: is required
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <label for="state" class="form-label"
+                                                    >தாலுகா:</label
+                                                    >
+                                                    <select class="form-select complainantTaluk" name="complainantTaluk[]" id="state">
+                                                    <option value="" selected></option>
+                                                    <option value="திண்டுக்கல்" <?=$complainant['taluk'] == 'திண்டுக்கல்' ? ' selected="selected"' : '';?> >திண்டுக்கல்</option>
+                                                    <option value="வேடசந்தூர்" <?=$complainant['taluk'] == 'வேடசந்தூர்' ? ' selected="selected"' : '';?> >வேடசந்தூர்</option>
+                                                    <option value="பழனி" <?=$complainant['taluk'] == 'பழனி' ? ' selected="selected"' : '';?> >பழனி</option>
+                                                    <option value="நிலக்கோட்டை" <?=$complainant['taluk'] == 'நிலக்கோட்டை' ? ' selected="selected"' : '';?> >நிலக்கோட்டை</option>
+                                                    <option value="ஒட்டன்சத்திரம்" <?=$complainant['taluk'] == 'ஒட்டன்சத்திரம்' ? ' selected="selected"' : '';?> >ஒட்டன்சத்திரம்</option>
+                                                    <option value="ஆத்தூர்" <?=$complainant['taluk'] == 'ஆத்தூர்' ? ' selected="selected"' : '';?>>ஆத்தூர்</option>
+                                                    <option value="நத்தம்" <?=$complainant['taluk'] == 'நத்தம்' ? ' selected="selected"' : '';?> >நத்தம்</option>
+                                                    <option value="கொடைக்கானல்" <?=$complainant['taluk'] == 'கொடைக்கானல்' ? ' selected="selected"' : '';?> >கொடைக்கானல்</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                    தாலுகா is required
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="state" class="form-label"
+                                                    >மாவட்டம்:</label
+                                                    >
+                                                    <select class="form-select complainantDistrict" name="complainantDistrict[]" id="state">
+                                                    <option value="" selected></option>
+                                                    <option value="திண்டுக்கல்" <?=$complainant['district'] == 'திண்டுக்கல்' ? ' selected="selected"' : '';?> >திண்டுக்கல்</option>
+
+                                                    <option value="சென்னை" <?=$complainant['district'] == 'சென்னை' ? ' selected="selected"' : '';?> >சென்னை</option>
+
+                                                    <option value="காஞ்சிபுரம்" <?=$complainant['district'] == 'காஞ்சிபுரம்' ? ' selected="selected"' : '';?> >காஞ்சிபுரம்</option>
+
+                                                    <option value="செங்கல்பட்டு" <?=$complainant['district'] == 'செங்கல்பட்டு' ? ' selected="selected"' : '';?> >செங்கல்பட்டு</option>
+
+                                                    <option value="திருவள்ளூர்" <?=$complainant['district'] == 'திருவள்ளூர்' ? ' selected="selected"' : '';?> >திருவள்ளூர்</option>
+
+                                                    <option value="திருவண்ணாமலை" <?=$complainant['district'] == 'திருவண்ணாமலை' ? ' selected="selected"' : '';?> >திருவண்ணாமலை</option>
+
+                                                    <option value="வேலூர்" <?=$complainant['district'] == 'வேலூர்' ? ' selected="selected"' : '';?> >வேலூர்</option>
+
+                                                    <option value="விழுப்புரம்" <?=$complainant['district'] == 'விழுப்புரம்' ? ' selected="selected"' : '';?> >விழுப்புரம்</option>
+
+                                                    <option value="கள்ளக்குறிச்சி" <?=$complainant['district'] == 'கள்ளக்குறிச்சி' ? ' selected="selected"' : '';?> >கள்ளக்குறிச்சி</option>
+
+                                                    <option value="திருப்பத்தூர்" <?=$complainant['district'] == 'திருப்பத்தூர்' ? ' selected="selected"' : '';?> >திருப்பத்தூர்</option>
+
+                                                    <option value="இராணிப்பேட்டை" <?=$complainant['district'] == 'இராணிப்பேட்டை' ? ' selected="selected"' : '';?> >இராணிப்பேட்டை</option>
+
+                                                    <option value="அரியலூர்" <?=$complainant['district'] == 'அரியலூர்' ? ' selected="selected"' : '';?> >அரியலூர்</option>
+
+                                                    <option value="கடலூர்" <?=$complainant['district'] == 'கடலூர்' ? ' selected="selected"' : '';?> >கடலூர்</option>
+
+                                                    <option value="மயிலாடுதுறை" <?=$complainant['district'] == 'மயிலாடுதுறை' ? ' selected="selected"' : '';?> >மயிலாடுதுறை</option>
+
+                                                    <option value="நாகப்பட்டினம்" <?=$complainant['district'] == 'நாகப்பட்டினம்' ? ' selected="selected"' : '';?> >நாகப்பட்டினம்</option>
+
+                                                    <option value="பெரம்பலூர்" <?=$complainant['district'] == 'பெரம்பலூர்' ? ' selected="selected"' : '';?> >பெரம்பலூர்</option>
+
+                                                    <option value="புதுக்கோட்டை" <?=$complainant['district'] == 'புதுக்கோட்டை' ? ' selected="selected"' : '';?> >புதுக்கோட்டை</option>
+
+                                                    <option value="தஞ்சாவூர்" <?=$complainant['district'] == 'தஞ்சாவூர்' ? ' selected="selected"' : '';?> >தஞ்சாவூர்</option>
+                                                    
+                                                    <option value="திருச்சிராப்பள்ளி" <?=$complainant['district'] == 'திருச்சிராப்பள்ளி' ? ' selected="selected"' : '';?> >திருச்சிராப்பள்ளி</option>
+
+                                                    <option value="திருவாரூர்" <?=$complainant['district'] == 'திருவாரூர்' ? ' selected="selected"' : '';?> >திருவாரூர்</option>
+
+                                                    <option value="தருமபுரி" <?=$complainant['district'] == 'தருமபுரி' ? ' selected="selected"' : '';?> >தருமபுரி</option>
+
+                                                    <option value="திண்டுக்கல்" <?=$complainant['district'] == 'திண்டுக்கல்' ? ' selected="selected"' : '';?> >திண்டுக்கல்</option>
+
+                                                    <option value="கோயம்புத்தூர்" <?=$complainant['district'] == 'கோயம்புத்தூர்' ? ' selected="selected"' : '';?> >கோயம்புத்தூர்</option>
+
+                                                    <option value="கரூர்" <?=$complainant['district'] == 'கரூர்' ? ' selected="selected"' : '';?> >கரூர்</option>
+
+                                                    <option value="ஈரோடு" <?=$complainant['district'] == 'ஈரோடு' ? ' selected="selected"' : '';?> >ஈரோடு</option>
+
+                                                    <option value="கிருஷ்ணகிரி" <?=$complainant['district'] == 'கிருஷ்ணகிரி' ? ' selected="selected"' : '';?> >கிருஷ்ணகிரி</option>
+
+                                                    <option value="நாமக்கல்" <?=$complainant['district'] == 'நாமக்கல்' ? ' selected="selected"' : '';?> >நாமக்கல்</option>
+
+                                                    <option value="நீலகிரி" <?=$complainant['district'] == 'நீலகிரி' ? ' selected="selected"' : '';?> >நீலகிரி</option>
+
+                                                    <option value="சேலம்" <?=$complainant['district'] == 'சேலம்' ? ' selected="selected"' : '';?>>சேலம்</option>
+
+                                                    <option value="திருப்பூர்" <?=$complainant['district'] == 'திருப்பூர்' ? ' selected="selected"' : '';?> >திருப்பூர்</option>
+
+                                                    <option value="கன்னியாகுமரி" <?=$complainant['district'] == 'கன்னியாகுமரி' ? ' selected="selected"' : '';?> >கன்னியாகுமரி</option>
+
+                                                    <option value="மதுரை" <?=$complainant['district'] == 'மதுரை' ? ' selected="selected"' : '';?> >மதுரை</option>
+
+                                                    <option value="இராமநாதபுரம்" <?=$complainant['district'] == 'இராமநாதபுரம்' ? ' selected="selected"' : '';?> >இராமநாதபுரம்</option>
+
+                                                    <option value="சிவகங்கை" <?=$complainant['district'] == 'சிவகங்கை' ? ' selected="selected"' : '';?> >சிவகங்கை</option>
+
+                                                    <option value="தேனி" <?=$complainant['district'] == 'தேனி' ? ' selected="selected"' : '';?> >தேனி</option>
+
+                                                    <option value="தூத்துக்குடி" <?=$complainant['district'] == 'தூத்துக்குடி' ? ' selected="selected"' : '';?> >தூத்துக்குடி</option>
+
+                                                    <option value="திருநெல்வேலி" <?=$complainant['district'] == 'திருநெல்வேலி' ? ' selected="selected"' : '';?> >திருநெல்வேலி</option>
+
+                                                    <option value="தென்காசி" <?=$complainant['district'] == 'தென்காசி' ? ' selected="selected"' : '';?> >தென்காசி</option>
+
+                                                    <option value="விருதுநகர்" <?=$complainant['district'] == 'விருதுநகர்' ? ' selected="selected"' : '';?> >விருதுநகர்</option>
+
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                    மாவட்டம் is required
+                                                    </div>
+                                                </div>
+
+                                        
+                                                <div class="col-md-4" style="margin-top: 43px">
+                                                    <button
+                                                    type="button"
+                                                    class="btn btn-success add-btn"
+                                                    data-bs-toggle="modal"
+                                                    id="create-btn"
+                                                    data-bs-target="#showModal"
+                                                    >
+                                                    <i
+                                                        class="ri-add-line align-bottom me-1"
+                                                    ></i>
+                                                    Add
+                                                    </button>
+                                                    <button type="button" class="btn btn-soft-danger delete-btn">
+                                                    <i class="ri-delete-bin-2-line"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                    
+                                        </div>
                                     </div>
                                 <?php
                                 }
@@ -1327,17 +1331,16 @@ $defendants = json_decode($osDetails['defendants'], true);
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="cc-expiration" class="form-label"
-                                                >முகவரி 1:</label
-                                                >
+                                                <label for="defendantAddress1" class="form-label"
+                                                >முகவரி 1:</label>
                                                 <input
                                                 type="text"
                                                 class="form-control defendantAddress-1"
-                                                name="defendantAddress-1[]"
-                                                id="vathi-age"
+                                                name="defendantAddress"
+                                                id="defendantAddress1"
                                                 placeholder=""
-                                                required=""
                                                 value=""
+                                                
                                                 />
                                                 <div class="invalid-feedback">
                                                 முகவரி 1: is required
@@ -1354,7 +1357,7 @@ $defendants = json_decode($osDetails['defendants'], true);
                                                 name="defendantAddress-2[]"
                                                 id="vathi-age"
                                                 placeholder=""
-                                                required=""
+                                                required
                                                 value="<?php echo $defendant['address2']; ?>"
                                                 />
                                                 <div class="invalid-feedback">
@@ -1484,7 +1487,7 @@ $defendants = json_decode($osDetails['defendants'], true);
                                                 ></i>
                                                 Add
                                                 </button>
-                                                <button class="btn btn-soft-danger defendant-delete-btn">
+                                                <button type="button" class="btn btn-soft-danger defendant-delete-btn">
                                                 <i class="ri-delete-bin-2-line"></i> Delete
                                                 </button>
                                             </div>
@@ -1718,6 +1721,266 @@ $defendants = json_decode($osDetails['defendants'], true);
     <script src="../assets-dashboard/js/app.js"></script>
 
     <script src="../assets-dashboard/js/pages/toastr.min.js"></script>
-    <script src="../assets-dashboard/js/customScript.js"></script>
+    <!-- <script src="../assets-dashboard/js/customScript.js"></script> -->
   </body>
 </html>
+<script>
+$(document).ready(function () {
+    // var counter = 1;
+
+    function generateComplainantSection() {
+        var complainantSection = `
+        <div class="complainant my-3">   
+            <div class="complainantSection">
+        
+              <div class="">
+                <h5 class="fw-bold">வாதி<span class="complainantCount ms-1">1</span></h5>
+                <p class="text-muted">
+                    Fill all information below
+                </p>
+              </div>
+
+              <div class="my-3">
+                <div class="row g-3">
+                    
+
+                    <div class="col-md-3">
+                    <label for="cc-number" class="form-label"
+                        >வாதியின் பெயர்:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control complainantName"
+                        name="complainantName[]"
+                        id="vathi-name"
+                        placeholder=""
+                        required=""
+                    />
+                    <div class="invalid-feedback">
+                        வாதியின் பெயர் is required
+                    </div>
+                    </div>
+
+                    <div class="col-md-3">
+                    <label for="cc-expiration" class="form-label"
+                        >வயது:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control complainantAge"
+                        name="complainantAge[]"
+                        id="vathi-age"
+                        placeholder=""
+                        required=""
+                    />
+                    <div class="invalid-feedback">
+                        வயது is required
+                    </div>
+                    </div>
+
+                    <div class="col-md-3">
+                    <label for="state" class="form-label"
+                        >Notation</label
+                    >
+                    <select class="form-select complainantNotation" name="complainantNotation[]" id="state">
+                        <option value="" selected></option>
+                        <option value="த/பெ">த/பெ</option>
+                        <option value="ம/பெ">ம/பெ</option>
+                        <option value="க/பெ">க/பெ</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a Notation
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                    <label for="cc-cvv" class="form-label"
+                        >பெயர்:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control complainantNotationName"
+                        name="complainantNotationName[]"
+                        id="cc-cvv"
+                        placeholder=""
+                        required=""
+                    />
+                    <div class="invalid-feedback">
+                        பெயர் required
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <label for="state" class="form-label"
+                        >பாலினம்:</label
+                    >
+                    <select class="form-select complainantGender" name="complainantGender[]" id="state">
+                        <option value="" selected></option>
+                        <option value="ஆண்">ஆண்</option>
+                        <option value="பெண்">பெண்</option>
+                        <option value="மற்றவை">மற்றவை</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        பாலினம் is required
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <label for="state" class="form-label"
+                        >மதம்:</label
+                    >
+                    <select class="form-select complainantReligion" name="complainantReligion[]" id="state">
+                        <option value="" selected></option>
+                        <option value="இந்து">இந்து</option>
+                        <option value="முஸ்லீம்">முஸ்லீம்</option>
+                        <option value="கிறித்தவம்">கிறித்தவம்</option>
+                        <option value="மற்றவை">மற்றவை</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        மதம் is required
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <label for="cc-expiration" class="form-label"
+                        >முகவரி 1:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control complainantaddress-1"
+                        name="complainantAddress-1[]"
+                        id="vathi-age"
+                        placeholder=""
+                        required=""
+                    />
+                    <div class="invalid-feedback">
+                        முகவரி 1: is required
+                    </div>
+                    </div>
+
+                    <div class="col-md-6">
+                    <label for="cc-expiration" class="form-label"
+                        >முகவரி 2:</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control complainantAddress-2"
+                        name="complainantAddress-2[]"
+                        id="vathi-age"
+                        placeholder=""
+                        required=""
+                    />
+                    <div class="invalid-feedback">
+                        முகவரி 2: is required
+                    </div>
+                    </div>
+
+                    <div class="col-md-4">
+                    <label for="state" class="form-label"
+                        >தாலுகா:</label
+                    >
+                    <select class="form-select complainantTaluk" name="complainantTaluk[]" id="state">
+                        <option value="" selected></option>
+                        <option value="திண்டுக்கல்">திண்டுக்கல்</option>
+                        <option value="வேடசந்தூர்">வேடசந்தூர்</option>
+                        <option value="பழனி">பழனி</option>
+                        <option value="நிலக்கோட்டை">நிலக்கோட்டை</option>
+                        <option value="ஒட்டன்சத்திரம்">ஒட்டன்சத்திரம்</option>
+                        <option value="ஆத்தூர்">ஆத்தூர்</option>
+                        <option value="நத்தம்">நத்தம்</option>
+                        <option value="கொடைக்கானல்">கொடைக்கானல்</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        தாலுகா is required
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                    <label for="state" class="form-label"
+                        >மாவட்டம்:</label
+                    >
+                    <select class="form-select complainantDistrict" name="complainantDistrict[]" id="state">
+                        <option value="" selected></option>
+                        <option value="திண்டுக்கல்">திண்டுக்கல்</option>
+                        <option value="சென்னை">சென்னை</option>
+                        <option value="காஞ்சிபுரம்">காஞ்சிபுரம்</option>
+                        <option value="செங்கல்பட்டு">செங்கல்பட்டு</option>
+                        <option value="திருவள்ளூர்">திருவள்ளூர்</option>
+                        <option value="திருவண்ணாமலை">திருவண்ணாமலை</option>
+                        <option value="வேலூர்">வேலூர்</option>
+                        <option value="விழுப்புரம்">விழுப்புரம்</option>
+                        <option value="கள்ளக்குறிச்சி">கள்ளக்குறிச்சி</option>
+                        <option value="திருப்பத்தூர்">திருப்பத்தூர்</option>
+                        <option value="இராணிப்பேட்டை">இராணிப்பேட்டை</option>
+                        <option value="அரியலூர்">அரியலூர்</option>
+                        <option value="கடலூர்">கடலூர்</option>
+                        <option value="மயிலாடுதுறை">மயிலாடுதுறை</option>
+                        <option value="நாகப்பட்டினம்">நாகப்பட்டினம்</option>
+                        <option value="பெரம்பலூர்">பெரம்பலூர்</option>
+                        <option value="புதுக்கோட்டை">புதுக்கோட்டை</option>
+                        <option value="தஞ்சாவூர்">தஞ்சாவூர்</option>
+                        <option value="திருச்சிராப்பள்ளி">திருச்சிராப்பள்ளி</option>
+                        <option value="திருவாரூர்">திருவாரூர்</option>
+                        <option value="தருமபுரி">தருமபுரி</option>
+                        <option value="திண்டுக்கல்">திண்டுக்கல்</option>
+                        <option value="கோயம்புத்தூர்">கோயம்புத்தூர்</option>
+                        <option value="கரூர்">கரூர்</option>
+                        <option value="ஈரோடு">ஈரோடு</option>
+                        <option value="கிருஷ்ணகிரி">கிருஷ்ணகிரி</option>
+                        <option value="நாமக்கல்">நாமக்கல்</option>
+                        <option value="நீலகிரி">நீலகிரி</option>
+                        <option value="சேலம்">சேலம்</option>
+                        <option value="திருப்பூர்">திருப்பூர்</option>
+                        <option value="கன்னியாகுமரி">கன்னியாகுமரி</option>
+                        <option value="மதுரை">மதுரை</option>
+                        <option value="இராமநாதபுரம்">இராமநாதபுரம்</option>
+                        <option value="சிவகங்கை">சிவகங்கை</option>
+                        <option value="தேனி">தேனி</option>
+                        <option value="தூத்துக்குடி">தூத்துக்குடி</option>
+                        <option value="திருநெல்வேலி">திருநெல்வேலி</option>
+                        <option value="தென்காசி">தென்காசி</option>
+                        <option value="விருதுநகர்">விருதுநகர்</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        மாவட்டம் is required
+                    </div>
+                    </div>
+
+            
+                    <div class="col-md-4" style="margin-top: 43px">
+                    <button
+                        type="button"
+                        class="btn btn-success add-btn"
+                        data-bs-toggle="modal"
+                        id="create-btn"
+                        data-bs-target="#showModal"
+                    >
+                        <i
+                        class="ri-add-line align-bottom me-1"
+                        ></i>
+                        Add
+                    </button>
+                    <button type="button" class="btn btn-soft-danger delete-btn">
+                        <i class="ri-delete-bin-2-line"></i> Delete
+                    </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        `;
+        return complainantSection;
+    }
+
+    $(document).on("click", ".add-btn", function () {
+        var complainantSection = generateComplainantSection();
+        $(".complainant:last").after(complainantSection);
+        // counter++;
+    });
+
+    $(document).on("click", ".delete-btn", function () {
+        if($(".complainantSection").length > 1) {
+          $(this).closest(".complainantSection").remove();
+          // counter--;
+        } else {
+      
+        }
+    });
+
+});
+</script>
