@@ -17,8 +17,21 @@ toastr.options = {
 };
 
 
-  $(document).ready(function () {
-    // var counter = 1;
+$(document).ready(function () {
+  var complainantCount = 1;
+  var defendantCount = 1;
+
+    function updateComplainantCounts() {
+      $(".complainantCount").each(function(index) {
+          $(this).text(index + 1);
+      });
+    }
+
+    function updateDefendantCounts() {
+      $(".defendantCount").each(function(index) {
+          $(this).text(index + 1); 
+      });
+    }
 
     function generateComplainantSection() {
         var complainantSection = `
@@ -26,7 +39,7 @@ toastr.options = {
             <div class="complainantSection">
         
               <div class="">
-                <h5 class="fw-bold">வாதி<span class="complainantCount ms-1">1</span></h5>
+                <h5 class="fw-bold">வாதி<span class="complainantCount ms-1">${complainantCount}</span></h5>
                 <p class="text-muted">
                     Fill all information below
                 </p>
@@ -265,7 +278,7 @@ toastr.options = {
             <div class="defendantSection">
         
                 <div class="">
-                    <h5>எதிர்வாதி<span class="defendantCount ms-1">1</span></h5>
+                    <h5>எதிர்வாதி<span class="defendantCount ms-1">${defendantCount}</span></h5>
                     <p class="text-muted">
                     Fill all information below
                     </p>
@@ -508,13 +521,14 @@ toastr.options = {
     $(document).on("click", ".add-complainant", function () {
         var complainantSection = generateComplainantSection();
         $(".complainant:last").after(complainantSection);
-        // counter++;
+        updateComplainantCounts();
+  
     });
 
     $(document).on("click", ".delete-complainant", function () {
         if($(".complainantSection").length > 1) {
           $(this).closest(".complainantSection").remove();
-          // counter--;
+          updateComplainantCounts();
         } else {
       
         }
@@ -523,91 +537,20 @@ toastr.options = {
     $(document).on("click", ".add-defendant", function () {
         var defendantSection = generateDefendantSection();
         $(".defendant:last").after(defendantSection);
-        // counter++;
+        updateDefendantCounts();
     });
 
     $(document).on("click", ".delete-defendant", function () {
         if($(".defendantSection").length > 1) {
           $(this).closest(".defendantSection").remove();
-          // counter--;
+          updateDefendantCounts();
         } else {
       
         }
     });
-
-
-    $(document).ready(function(){
-      $('#update').click(function(){
-      
-          var realCaseNo = $('.realCaseNo').val();
-          var cnrNo = $('.cnrNo').val();
-          var judgement = $('#judgement').val();
-          var finalJudgement = $('#finalJudgement').val();
-
-          var complainantData = [];
-          var defendantData = [];
-
-          $('.complainant').each(function () {
-              var complainants = {
-                  name: $(this).find('.complainantName').val(),
-                  age: $(this).find('.complainantAge').val(),
-                  notation: $(this).find('.complainantNotation').val(),
-                  notationName: $(this).find('.complainantNotationName').val(),
-                  gender: $(this).find('.complainantGender').val(),
-                  religion: $(this).find('.complainantReligion').val(),
-                  address1: $(this).find('.complainantaddress-1').val(),
-                  address2: $(this).find('.complainantAddress-2').val(),
-                  taluk: $(this).find('.complainantTaluk').val(),
-                  district: $(this).find('.complainantDistrict').val(),
-              };
-
-              complainantData.push(complainants);
-          });
-          console.log(complainantData);
-
-          $('.defendant').each(function () {
-              var defendants = {
-                  name: $(this).find('.defendantName').val(),
-                  age: $(this).find('.defendantAge').val(),
-                  notation: $(this).find('.defendantNotation').val(),
-                  notationName: $(this).find('.defendantNotationName').val(),
-                  gender: $(this).find('.defendantGender').val(),
-                  religion: $(this).find('.defendantReligion').val(),
-                  address1: $(this).find('.defendantaddress-1').val(),
-                  address2: $(this).find('.defendantAddress-2').val(),
-                  taluk: $(this).find('.defendantTaluk').val(),
-                  district: $(this).find('.defendantDistrict').val(),
-              };
-
-              defendantData.push(defendants);
-          });
-          console.log(defendantData);
-          // console.log(JSON.stringify(complainantData, null, 2));
-          // console.log(JSON.stringify(defendantData, null, 2));
-
-          var  complainantDataString = JSON.stringify(complainantData);
-          var  defendantDataString = JSON.stringify(defendantData);
-          $.ajax({
-              url:"osUpdate.php",
-              method: "POST",
-              data:{realCaseNo:realCaseNo, cnrNo:cnrNo, complainantDataString:complainantDataString, defendantDataString:defendantDataString, judgement:judgement, finalJudgement:finalJudgement},
-              success:function(response){
-                  var responseData = JSON.parse(response)
-                  toastr[responseData.status](responseData.message);
-                  if(responseData.status == "success"){
-                      $('#osMoneySuitUpdate')[0].reset();
-
-                      // window.location.href = '/Admin/os_moneysuit.php';
-                      // $('.complainantTab').addClass("active show");
-                  }else{
-                      
-                  }
-              }
-          });
-      });
-    });
-
 });
+
+
 $(document).ready(function(){
     $('#submit').click(function(){
     
@@ -675,6 +618,77 @@ $(document).ready(function(){
             }
         });
     });
+});
+
+$(document).ready(function(){
+  $('#update').click(function(){
+  
+      var realCaseNo = $('.realCaseNo').val();
+      var cnrNo = $('.cnrNo').val();
+      var judgement = $('#judgement').val();
+      var finalJudgement = $('#finalJudgement').val();
+
+      var complainantData = [];
+      var defendantData = [];
+
+      $('.complainant').each(function () {
+          var complainants = {
+              name: $(this).find('.complainantName').val(),
+              age: $(this).find('.complainantAge').val(),
+              notation: $(this).find('.complainantNotation').val(),
+              notationName: $(this).find('.complainantNotationName').val(),
+              gender: $(this).find('.complainantGender').val(),
+              religion: $(this).find('.complainantReligion').val(),
+              address1: $(this).find('.complainantaddress-1').val(),
+              address2: $(this).find('.complainantAddress-2').val(),
+              taluk: $(this).find('.complainantTaluk').val(),
+              district: $(this).find('.complainantDistrict').val(),
+          };
+
+          complainantData.push(complainants);
+      });
+      console.log(complainantData);
+
+      $('.defendant').each(function () {
+          var defendants = {
+              name: $(this).find('.defendantName').val(),
+              age: $(this).find('.defendantAge').val(),
+              notation: $(this).find('.defendantNotation').val(),
+              notationName: $(this).find('.defendantNotationName').val(),
+              gender: $(this).find('.defendantGender').val(),
+              religion: $(this).find('.defendantReligion').val(),
+              address1: $(this).find('.defendantaddress-1').val(),
+              address2: $(this).find('.defendantAddress-2').val(),
+              taluk: $(this).find('.defendantTaluk').val(),
+              district: $(this).find('.defendantDistrict').val(),
+          };
+
+          defendantData.push(defendants);
+      });
+      console.log(defendantData);
+      // console.log(JSON.stringify(complainantData, null, 2));
+      // console.log(JSON.stringify(defendantData, null, 2));
+
+      var  complainantDataString = JSON.stringify(complainantData);
+      var  defendantDataString = JSON.stringify(defendantData);
+      $.ajax({
+          url:"osUpdate.php",
+          method: "POST",
+          data:{realCaseNo:realCaseNo, cnrNo:cnrNo, complainantDataString:complainantDataString, defendantDataString:defendantDataString, judgement:judgement, finalJudgement:finalJudgement},
+          success:function(response){
+              var responseData = JSON.parse(response)
+              toastr[responseData.status](responseData.message);
+              if(responseData.status == "success"){
+                  $('#osMoneySuitUpdate')[0].reset();
+
+                  // window.location.href = '/Admin/os_moneysuit.php';
+                  // $('.complainantTab').addClass("active show");
+              }else{
+                  
+              }
+          }
+      });
+  });
 });
 
 $(document).ready(function(){
