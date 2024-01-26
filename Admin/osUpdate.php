@@ -2,6 +2,7 @@
 
 require '../config.php';
 
+$id = $_POST['id'];
 $realCaseNo = $_POST['realCaseNo'];
 $cnrNo = $_POST['cnrNo'];
 $complainants = $_POST['complainantDataString'];
@@ -13,8 +14,7 @@ $response;
 // var_dump($complainants);
 // exit;
 
-$sql = "update  os set case_no ='$realCaseNo' , cnr_no = '$cnrNo', complainants = '$complainants', defendants = '$defendants', judgement = '$judgement', final_judgement = '$final_judgement' ";
-
+$sql = "update  os set case_no ='$realCaseNo' , cnr_no = '$cnrNo', complainants = '$complainants', defendants = '$defendants', judgement = '$judgement', final_judgement = '$final_judgement' where id = ".$id." ";
 
 $updateOs = mysqli_query($conn, $sql);
 
