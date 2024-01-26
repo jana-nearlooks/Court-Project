@@ -1,3 +1,5 @@
+var baseUrl = "http://localhost/Court-Project";
+
 toastr.options = {
     "closeButton": true,
     "debug": false,
@@ -588,7 +590,7 @@ $(document).ready(function(){
                 notationName: $(this).find('.defendantNotationName').val(),
                 gender: $(this).find('.defendantGender').val(),
                 religion: $(this).find('.defendantReligion').val(),
-                address1: $(this).find('.defendantaddress-1').val(),
+                address1: $(this).find('.defendantAddress-1').val(),
                 address2: $(this).find('.defendantAddress-2').val(),
                 taluk: $(this).find('.defendantTaluk').val(),
                 district: $(this).find('.defendantDistrict').val(),
@@ -602,6 +604,7 @@ $(document).ready(function(){
 
         var  complainantDataString = JSON.stringify(complainantData);
         var  defendantDataString = JSON.stringify(defendantData);
+
         $.ajax({
             url:"os.php",
             method: "POST",
@@ -611,6 +614,9 @@ $(document).ready(function(){
                 toastr[responseData.status](responseData.message);
                 if(responseData.status == "success"){
                     $('#osMoneySuit')[0].reset();
+                    setTimeout(function() {
+                        window.location.href = baseUrl+'/Admin/index.php';
+                    }, 2000);  
                     // $('.complainantTab').addClass("active show");
                 }else{
                     
@@ -623,6 +629,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('#update').click(function(){
   
+      var id = $('#id').val();
       var realCaseNo = $('.realCaseNo').val();
       var cnrNo = $('.cnrNo').val();
       var judgement = $('#judgement').val();
@@ -657,7 +664,7 @@ $(document).ready(function(){
               notationName: $(this).find('.defendantNotationName').val(),
               gender: $(this).find('.defendantGender').val(),
               religion: $(this).find('.defendantReligion').val(),
-              address1: $(this).find('.defendantaddress-1').val(),
+              address1: $(this).find('.defendantAddress-1').val(),
               address2: $(this).find('.defendantAddress-2').val(),
               taluk: $(this).find('.defendantTaluk').val(),
               district: $(this).find('.defendantDistrict').val(),
@@ -671,17 +678,20 @@ $(document).ready(function(){
 
       var  complainantDataString = JSON.stringify(complainantData);
       var  defendantDataString = JSON.stringify(defendantData);
+
       $.ajax({
           url:"osUpdate.php",
           method: "POST",
-          data:{realCaseNo:realCaseNo, cnrNo:cnrNo, complainantDataString:complainantDataString, defendantDataString:defendantDataString, judgement:judgement, finalJudgement:finalJudgement},
+          data:{id:id , realCaseNo:realCaseNo, cnrNo:cnrNo, complainantDataString:complainantDataString, defendantDataString:defendantDataString, judgement:judgement, finalJudgement:finalJudgement},
           success:function(response){
               var responseData = JSON.parse(response)
               toastr[responseData.status](responseData.message);
               if(responseData.status == "success"){
-                  $('#osMoneySuitUpdate')[0].reset();
-
-                  // window.location.href = '/Admin/os_moneysuit.php';
+                    $('#osMoneySuitUpdate')[0].reset();
+                    $('#osMoneySuitUpdate').find('input, select, textarea').val('');
+                    setTimeout(function() {
+                        window.location.href = baseUrl+'/Admin/index.php';
+                    }, 2000);  
                   // $('.complainantTab').addClass("active show");
               }else{
                   

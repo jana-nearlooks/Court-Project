@@ -1342,7 +1342,7 @@ $defendants = json_decode($osDetails['defendants'], true);
                                                   id="defendantAddress1"
                                                   placeholder=""
                                                   required
-                                                  value=""
+                                                  value="<?php echo $defendant['address1']; ?>"
                                                   
                                                   />
                                                   <div class="invalid-feedback">
@@ -1543,6 +1543,7 @@ $defendants = json_decode($osDetails['defendants'], true);
                                 rows="20"
                                 required=""
                               ><?php echo $osDetails['judgement']; ?></textarea>
+                              <input type="hidden" name="id" id="id" value="<?php echo $osDetails['id'];  ?>">
                               <div class="invalid-feedback">
                                 Please enter a description
                               </div>

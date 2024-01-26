@@ -20,6 +20,8 @@ if($env == 'live'){
         echo 'Something Went Wrong'.mysqli_connect_error();
     }
 
+    $base_url = "";
+
 }else if($env == "local"){
 
     $servername = "localhost";
